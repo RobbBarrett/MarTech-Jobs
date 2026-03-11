@@ -115,78 +115,53 @@ and reliable revenue attribution.
 
 </div>
 </section>
-<section id="automation" class="section alt">
+=<section id="automation" class="section alt">
   <div class="section-label">Automation</div>
-  <h2>How most companies use Marketo</h2>
+  <h2>How Most Companies Use Marketo</h2>
 
   <p class="architecture-intro">
-    In many organizations, Marketo is treated as a campaign engine - valuable for email,
-    forms, and lead handoff, but disconnected from deeper behavioral intelligence.
+    In many organizations, Marketo is treated as a campaign engine - useful for email,
+    forms, and basic scoring, but disconnected from deeper behavioral intelligence
+    and revenue analytics.
   </p>
 
-  <div class="comparison-panel">
-    <div class="comparison-side traditional">
-      <div class="comparison-kicker">Traditional Marketo</div>
-      <div class="traditional-flow">
-        <div class="flow-pill">Form Fill</div>
-        <div class="flow-line"></div>
-        <div class="flow-pill">Nurture</div>
-        <div class="flow-line"></div>
-        <div class="flow-pill">Score</div>
-        <div class="flow-line"></div>
-        <div class="flow-pill">MQL</div>
-        <div class="flow-line"></div>
-        <div class="flow-pill">Sales</div>
-      </div>
-
-      <div class="traditional-tags">
-        <span>Email-first</span>
-        <span>Linear</span>
-        <span>Surface reporting</span>
-      </div>
-    </div>
-
-    <div class="comparison-note">
-      Useful for campaign execution.<br>
-      Limited as a revenue intelligence system.
-    </div>
-  </div>
   <div class="automation-diagram">
+    <svg viewBox="0 0 1200 220" width="100%" height="220" aria-labelledby="automationTitle automationDesc" role="img">
+      <title id="automationTitle">Traditional Marketo flow</title>
+      <desc id="automationDesc">A linear flow showing Form Fill to Nurture Emails to Lead Score to MQL to Sales Handoff.</desc>
 
-<svg viewBox="0 0 1200 220" width="100%" height="220">
-<defs>
-  <marker id="arrowhead" markerWidth="10" markerHeight="7"
-          refX="9" refY="3.5" orient="auto">
-    <polygon points="0 0, 10 3.5, 0 7" fill="#1a7f5a"/>
-  </marker>
-</defs>
-<!-- boxes -->
+      <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+          <polygon points="0 0, 10 3.5, 0 7" fill="#1a7f5a"></polygon>
+        </marker>
+      </defs>
 
-<rect x="40" y="70" width="170" height="80" rx="10" class="flow-box"/>
-<text x="125" y="110" text-anchor="middle" class="flow-text">Form Fill</text>
+      <rect x="40" y="70" width="170" height="80" rx="10" class="flow-box"></rect>
+      <text x="125" y="110" text-anchor="middle" class="flow-text">Form Fill</text>
 
-<rect x="260" y="70" width="170" height="80" rx="10" class="flow-box"/>
-<text x="345" y="110" text-anchor="middle" class="flow-text">Nurture Emails</text>
+      <rect x="260" y="70" width="170" height="80" rx="10" class="flow-box"></rect>
+      <text x="345" y="110" text-anchor="middle" class="flow-text">Nurture Emails</text>
 
-<rect x="480" y="70" width="170" height="80" rx="10" class="flow-box"/>
-<text x="565" y="110" text-anchor="middle" class="flow-text">Lead Score</text>
+      <rect x="480" y="70" width="170" height="80" rx="10" class="flow-box"></rect>
+      <text x="565" y="110" text-anchor="middle" class="flow-text">Lead Score</text>
 
-<rect x="700" y="70" width="170" height="80" rx="10" class="flow-box"/>
-<text x="785" y="110" text-anchor="middle" class="flow-text">MQL</text>
+      <rect x="700" y="70" width="170" height="80" rx="10" class="flow-box"></rect>
+      <text x="785" y="110" text-anchor="middle" class="flow-text">MQL</text>
 
-<rect x="920" y="70" width="170" height="80" rx="10" class="flow-box muted"/>
-<text x="1005" y="110" text-anchor="middle" class="flow-text muted">Sales Handoff</text>
+      <rect x="920" y="70" width="170" height="80" rx="10" class="flow-box muted"></rect>
+      <text x="1005" y="110" text-anchor="middle" class="flow-text muted">Sales Handoff</text>
 
-<!-- arrows -->
+      <line x1="210" y1="110" x2="260" y2="110" class="flow-arrow"></line>
+      <line x1="430" y1="110" x2="480" y2="110" class="flow-arrow"></line>
+      <line x1="650" y1="110" x2="700" y2="110" class="flow-arrow"></line>
+      <line x1="870" y1="110" x2="920" y2="110" class="flow-arrow"></line>
+    </svg>
+  </div>
 
-<line x1="210" y1="110" x2="260" y2="110" class="flow-arrow"/>
-<line x1="430" y1="110" x2="480" y2="110" class="flow-arrow"/>
-<line x1="650" y1="110" x2="700" y2="110" class="flow-arrow"/>
-<line x1="870" y1="110" x2="920" y2="110" class="flow-arrow"/>
-
-</svg>
-
-</div>
+  <p class="automation-close">
+    This is the traditional model: linear, email-first, and only lightly connected to deeper
+    behavioral intelligence and revenue analytics.
+  </p>
 </section>
 
 <section id="architecture" class="section alt">
