@@ -918,70 +918,27 @@ a{
   color:#163127;
   max-width:760px;
 }
-
-@media (max-width: 1200px){
-  .automation-strip{
-    grid-template-columns:1fr;
-    gap:16px;
-  }
-
-  .automation-arrow{
-    display:none;
-  }
-
-  .automation-step{
-    min-height:auto;
-  }
+.automation-image{
+  margin:40px auto 30px;
+  max-width:1100px;
 }
 
-@media (max-width: 720px){
-  .automation-step-title{
-    font-size:22px;
-  }
-
-  .automation-step-text{
-    font-size:15px;
-  }
-
-  .automation-bottom-note{
-    font-size:20px;
-  }
+.automation-image img{
+  width:100%;
+  height:auto;
+  border-radius:22px;
+  box-shadow:0 18px 40px rgba(0,0,0,0.08);
 }
 
-@media (max-width: 1080px){
-  .automation-layout{
-    grid-template-columns:1fr;
-  }
-
-  .traditional-flow-row{
-    overflow-x:auto;
-    padding-bottom:6px;
-  }
-
-  .flow-connector{
-    min-width:36px;
-  }
+.automation-takeaway{
+  text-align:center;
+  font-size:22px;
+  font-weight:700;
+  color:#173127;
+  max-width:700px;
+  margin:0 auto;
 }
 
-@media (max-width: 720px){
-  .automation-visual{
-    padding:20px 18px 20px;
-  }
-
-  .flow-step{
-    width:120px;
-    min-height:138px;
-    border-radius:20px;
-  }
-
-  .flow-step-label{
-    font-size:16px;
-  }
-
-  .automation-takeaway{
-    font-size:18px;
-  }
-}
 @media (max-width: 1080px){
   .hero-grid,
   .media-grid,
