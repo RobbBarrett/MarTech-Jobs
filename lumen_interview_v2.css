@@ -297,3 +297,35 @@ text-align:center;
   color:#1f2b24;
   padding:22px 20px 4px;
 }
+.automation-diagram{
+max-width:1100px;
+margin:40px auto;
+}
+
+.flow-box{
+fill:#ffffff;
+stroke:#d9e5dd;
+stroke-width:2;
+}
+
+.flow-box.muted{
+fill:#f2f2f2;
+stroke:#dddddd;
+}
+
+.flow-text{
+font-size:16px;
+font-weight:600;
+fill:#1f2b24;
+dominant-baseline:middle;
+}
+
+.flow-text.muted{
+fill:#6f6f6f;
+}
+
+.flow-arrow{
+stroke:#1a7f5a;
+stroke-width:3;
+marker-end:url(#arrowhead);
+}
