@@ -737,6 +737,144 @@ a{
   color:#ffffff;
 }
 
+}
+
+.flow-step.muted{
+  background:rgba(224,235,229,.96);
+}
+
+.flow-icon{
+  width:54px;
+  height:54px;
+  border-radius:16px;
+  background:linear-gradient(180deg,#eff8f3 0%, #e6f2eb 100%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#116f4b;
+  margin-bottom:14px;
+}
+
+.flow-step.muted .flow-icon{
+  background:linear-gradient(180deg,#edf1ee 0%, #dde6e0 100%);
+  color:#3b5548;
+}
+
+.flow-icon svg{
+  width:28px;
+  height:28px;
+  stroke:currentColor;
+  fill:none;
+  stroke-width:2.2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.flow-step-label{
+  font-size:18px;
+  font-weight:800;
+  color:#183128;
+  line-height:1.15;
+}
+
+.flow-connector{
+  flex:1 1 auto;
+  min-width:28px;
+  height:4px;
+  border-radius:999px;
+  background:linear-gradient(90deg, #6fb98c 0%, #d5f2e0 100%);
+  box-shadow:0 0 0 1px rgba(255,255,255,.08);
+}
+
+.traditional-tags{
+  position:relative;
+  z-index:1;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.traditional-tags span{
+  background:rgba(230,245,236,.12);
+  border:1px solid rgba(178,226,196,.22);
+  color:#d7f0e2;
+  border-radius:999px;
+  padding:9px 12px;
+  font-size:14px;
+  font-weight:700;
+}
+
+.automation-copy{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.automation-note{
+  background:#ffffff;
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:24px 24px 22px;
+  box-shadow:var(--shadow-soft);
+}
+
+.automation-note h3{
+  margin:0 0 10px;
+  font-size:20px;
+  letter-spacing:-.02em;
+}
+
+.automation-note p{
+  margin:0;
+  color:var(--muted);
+}
+
+.automation-note-accent{
+  background:linear-gradient(180deg,#ffffff 0%, #eef7f2 100%);
+}
+
+.automation-takeaway{
+  padding:4px 4px 0;
+  font-size:20px;
+  line-height:1.4;
+  font-weight:700;
+  color:#173127;
+}
+
+@media (max-width: 1080px){
+  .automation-layout{
+    grid-template-columns:1fr;
+  }
+
+  .traditional-flow-row{
+    overflow-x:auto;
+    padding-bottom:6px;
+  }
+
+  .flow-connector{
+    min-width:36px;
+  }
+}
+
+@media (max-width: 720px){
+  .automation-visual{
+    padding:20px 18px 20px;
+  }
+
+  .flow-step{
+    width:120px;
+    min-height:138px;
+    border-radius:20px;
+  }
+
+  .flow-step-label{
+    font-size:16px;
+  }
+
+  .automation-takeaway{
+    font-size:18px;
+  }
+}
 @media (max-width: 1080px){
   .hero-grid,
   .media-grid,
