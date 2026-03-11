@@ -245,71 +245,112 @@
       </div>
     </section>
 
-    <section id="automation" class="section">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-label">Automation</div>
-          <h2>How most companies use Marketo</h2>
+   <section id="automation" class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label">Automation</div>
+      <h2>How most companies use Marketo</h2>
+      <p>
+        Many organizations treat Marketo primarily as a campaign engine - useful for email,
+        forms, and handoff, but disconnected from deeper behavioral intelligence.
+      </p>
+    </div>
+
+    <div class="automation-layout">
+      <div class="automation-visual">
+        <div class="automation-kicker">Traditional flow</div>
+
+        <div class="traditional-flow-row">
+          <div class="flow-step">
+            <div class="flow-icon">
+              <svg viewBox="0 0 40 40" aria-hidden="true">
+                <rect x="8" y="10" width="24" height="20" rx="4"></rect>
+                <path d="M8 14l12 8 12-8"></path>
+              </svg>
+            </div>
+            <div class="flow-step-label">Form Fill</div>
+          </div>
+
+          <div class="flow-connector"></div>
+
+          <div class="flow-step">
+            <div class="flow-icon">
+              <svg viewBox="0 0 40 40" aria-hidden="true">
+                <rect x="8" y="8" width="24" height="24" rx="4"></rect>
+                <path d="M14 16h12M14 22h8"></path>
+              </svg>
+            </div>
+            <div class="flow-step-label">Nurture</div>
+          </div>
+
+          <div class="flow-connector"></div>
+
+          <div class="flow-step">
+            <div class="flow-icon">
+              <svg viewBox="0 0 40 40" aria-hidden="true">
+                <circle cx="20" cy="20" r="12"></circle>
+                <path d="M20 12v8l5 3"></path>
+              </svg>
+            </div>
+            <div class="flow-step-label">Score</div>
+          </div>
+
+          <div class="flow-connector"></div>
+
+          <div class="flow-step">
+            <div class="flow-icon">
+              <svg viewBox="0 0 40 40" aria-hidden="true">
+                <rect x="9" y="10" width="22" height="20" rx="4"></rect>
+                <path d="M14 16h12M14 22h10"></path>
+              </svg>
+            </div>
+            <div class="flow-step-label">MQL</div>
+          </div>
+
+          <div class="flow-connector"></div>
+
+          <div class="flow-step muted">
+            <div class="flow-icon">
+              <svg viewBox="0 0 40 40" aria-hidden="true">
+                <circle cx="20" cy="15" r="5"></circle>
+                <path d="M11 31c2-6 7-9 9-9s7 3 9 9"></path>
+              </svg>
+            </div>
+            <div class="flow-step-label">Sales</div>
+          </div>
+        </div>
+
+        <div class="traditional-tags">
+          <span>Email-first</span>
+          <span>Linear</span>
+          <span>Surface reporting</span>
+        </div>
+      </div>
+
+      <div class="automation-copy">
+        <div class="automation-note">
+          <h3>Traditional mindset</h3>
           <p>
-            Many organizations treat Marketo primarily as a campaign engine - useful for email,
-            forms, and handoff, but disconnected from deeper behavioral intelligence.
+            Capture the lead. Put them into nurture. Assign a score. Hand off to sales.
+            Measure opens, clicks, and a few basic funnel points.
           </p>
         </div>
 
-        <div class="media-grid">
-          <div class="visual-card dark-card">
-            <div class="visual-card-top">Traditional flow</div>
-            <svg viewBox="0 0 560 360" class="section-svg" aria-hidden="true">
-              <defs>
-                <linearGradient id="autoLine" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#7ab692"/>
-                  <stop offset="100%" stop-color="#d8f3e3"/>
-                </linearGradient>
-              </defs>
+        <div class="automation-note automation-note-accent">
+          <h3>What gets missed</h3>
+          <p>
+            Behavioral patterns, data quality, enrichment, account context,
+            and the intelligence that should feed revenue analysis.
+          </p>
+        </div>
 
-              <rect x="38" y="145" width="95" height="66" rx="16" class="auto-box"/>
-              <text x="85" y="184" text-anchor="middle" class="auto-text">Form</text>
-
-              <rect x="155" y="145" width="105" height="66" rx="16" class="auto-box"/>
-              <text x="207" y="184" text-anchor="middle" class="auto-text">Nurture</text>
-
-              <rect x="282" y="145" width="95" height="66" rx="16" class="auto-box"/>
-              <text x="330" y="184" text-anchor="middle" class="auto-text">Score</text>
-
-              <rect x="399" y="145" width="70" height="66" rx="16" class="auto-box"/>
-              <text x="434" y="184" text-anchor="middle" class="auto-text">MQL</text>
-
-              <rect x="491" y="145" width="48" height="66" rx="16" class="auto-box muted"/>
-              <text x="515" y="184" text-anchor="middle" class="auto-text muted">Sales</text>
-
-              <path d="M133 178 H155" stroke="url(#autoLine)" stroke-width="6" stroke-linecap="round"/>
-              <path d="M260 178 H282" stroke="url(#autoLine)" stroke-width="6" stroke-linecap="round"/>
-              <path d="M377 178 H399" stroke="url(#autoLine)" stroke-width="6" stroke-linecap="round"/>
-              <path d="M469 178 H491" stroke="url(#autoLine)" stroke-width="6" stroke-linecap="round"/>
-
-              <text x="280" y="82" text-anchor="middle" class="auto-caption">Linear. Email-first. Surface-level reporting.</text>
-            </svg>
-          </div>
-
-          <div class="content-stack">
-            <div class="panel">
-              <h3>Traditional mindset</h3>
-              <p>
-                Capture the lead. Put them into nurture. Assign a score. Hand off to sales.
-                Measure opens, clicks, and a few basic funnel points.
-              </p>
-            </div>
-            <div class="panel accent-panel">
-              <h3>What gets missed</h3>
-              <p>
-                Behavioral patterns, data quality, enrichment, multi-touch context, and the real
-                intelligence that should feed revenue analysis.
-              </p>
-            </div>
-          </div>
+        <div class="automation-takeaway">
+          Useful for campaign execution. Limited as a revenue intelligence system.
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
     <section id="architecture" class="section section-tint">
       <div class="container">
