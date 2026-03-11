@@ -218,3 +218,82 @@ text-align:center;
   font-size:18px;
   color:#4d5b53;
 }
+.comparison-panel{
+  max-width:1100px;
+  margin:40px auto 0;
+  background:linear-gradient(180deg,#ffffff 0%, #f6faf7 100%);
+  border:1px solid #dbe7df;
+  border-radius:22px;
+  padding:34px 36px;
+  box-shadow:0 14px 40px rgba(0,0,0,0.05);
+}
+
+.comparison-side{
+  display:flex;
+  flex-direction:column;
+  gap:22px;
+}
+
+.comparison-kicker{
+  font-size:14px;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:#1a7f5a;
+}
+
+.traditional-flow{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:0;
+  flex-wrap:nowrap;
+  overflow-x:auto;
+  padding-bottom:6px;
+}
+
+.flow-pill{
+  background:#ffffff;
+  border:1px solid #d6e2db;
+  border-radius:999px;
+  padding:14px 22px;
+  font-weight:700;
+  color:#213129;
+  white-space:nowrap;
+  box-shadow:0 4px 14px rgba(0,0,0,0.04);
+}
+
+.flow-line{
+  width:42px;
+  height:2px;
+  background:linear-gradient(90deg,#9bbda8 0%, #1a7f5a 100%);
+  margin:0 8px;
+  flex:0 0 auto;
+}
+
+.traditional-tags{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.traditional-tags span{
+  background:#eaf4ee;
+  color:#2e5540;
+  border:1px solid #d4e5da;
+  border-radius:999px;
+  padding:8px 12px;
+  font-size:14px;
+  font-weight:600;
+}
+
+.comparison-note{
+  margin-top:26px;
+  text-align:center;
+  font-size:22px;
+  line-height:1.5;
+  font-weight:600;
+  color:#1f2b24;
+  padding:22px 20px 4px;
+}
