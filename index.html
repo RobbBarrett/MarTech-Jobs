@@ -480,55 +480,46 @@
 
       <div class="visual-card">
         <svg viewBox="0 0 560 360" class="section-svg" aria-hidden="true">
-          <defs>
-            <linearGradient id="insConnector" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#9cc9ae"/>
-              <stop offset="100%" stop-color="#1a8a5f"/>
-            </linearGradient>
-          </defs>
+  <!-- input boxes -->
+  <rect x="52" y="82" width="118" height="66" rx="16" class="ins-box"/>
+  <text x="111" y="122" text-anchor="middle" class="ins-text">Campaigns</text>
 
-          <!-- input boxes -->
-          <rect x="52" y="82" width="118" height="66" rx="16" class="ins-box"/>
-          <text x="111" y="122" text-anchor="middle" class="ins-text">Campaigns</text>
+  <rect x="52" y="165" width="118" height="66" rx="16" class="ins-box"/>
+  <text x="111" y="205" text-anchor="middle" class="ins-text">Behavior</text>
 
-          <rect x="52" y="165" width="118" height="66" rx="16" class="ins-box"/>
-          <text x="111" y="205" text-anchor="middle" class="ins-text">Behavior</text>
+  <rect x="52" y="248" width="118" height="66" rx="16" class="ins-box"/>
+  <text x="111" y="288" text-anchor="middle" class="ins-text">CRM</text>
 
-          <rect x="52" y="248" width="118" height="66" rx="16" class="ins-box"/>
-          <text x="111" y="288" text-anchor="middle" class="ins-text">CRM</text>
+  <!-- center block -->
+  <rect x="222" y="104" width="150" height="188" rx="26" class="ins-core"/>
+  <text x="297" y="150" text-anchor="middle" class="ins-core-title">Revenue</text>
+  <text x="297" y="182" text-anchor="middle" class="ins-core-title">Intelligence</text>
+  <text x="297" y="220" text-anchor="middle" class="ins-core-sub">Model</text>
+  <text x="297" y="246" text-anchor="middle" class="ins-core-sub">Combine</text>
+  <text x="297" y="272" text-anchor="middle" class="ins-core-sub">Interpret</text>
 
-          <!-- center block -->
-          <rect x="222" y="104" width="150" height="188" rx="26" class="ins-core"/>
-          <text x="297" y="155" text-anchor="middle" class="ins-core-title">Revenue</text>
-          <text x="297" y="185" text-anchor="middle" class="ins-core-title">Intelligence</text>
-          <text x="297" y="220" text-anchor="middle" class="ins-core-sub">Model</text>
-          <text x="297" y="245" text-anchor="middle" class="ins-core-sub">Combine</text>
-          <text x="297" y="270" text-anchor="middle" class="ins-core-sub">Interpret</text>
+  <!-- output boxes -->
+  <rect x="424" y="130" width="90" height="62" rx="16" class="ins-box right"/>
+  <text x="469" y="168" text-anchor="middle" class="ins-text">ROI</text>
 
-          <!-- output boxes -->
-          <rect x="424" y="130" width="90" height="62" rx="16" class="ins-box right"/>
-          <text x="469" y="168" text-anchor="middle" class="ins-text">ROI</text>
+  <rect x="424" y="208" width="110" height="62" rx="16" class="ins-box right"/>
+  <text x="479" y="246" text-anchor="middle" class="ins-text">Pipeline</text>
 
-          <rect x="424" y="208" width="110" height="62" rx="16" class="ins-box right"/>
-          <text x="479" y="246" text-anchor="middle" class="ins-text">Pipeline</text>
+  <!-- clean connectors -->
+  <line x1="170" y1="115" x2="222" y2="150" class="ins-connector"/>
+  <line x1="170" y1="198" x2="222" y2="198" class="ins-connector"/>
+  <line x1="170" y1="281" x2="222" y2="246" class="ins-connector"/>
 
-          <!-- connectors: inputs to center -->
-          <path d="M170 115 C198 115, 202 136, 222 150" class="ins-connector"/>
-          <path d="M170 198 C198 198, 202 198, 222 198" class="ins-connector"/>
-          <path d="M170 281 C198 281, 202 260, 222 246" class="ins-connector"/>
+  <line x1="372" y1="161" x2="424" y2="161" class="ins-connector"/>
+  <line x1="372" y1="239" x2="424" y2="239" class="ins-connector"/>
 
-          <!-- connector nodes -->
-          <circle cx="222" cy="150" r="4.5" class="ins-node"/>
-          <circle cx="222" cy="198" r="4.5" class="ins-node"/>
-          <circle cx="222" cy="246" r="4.5" class="ins-node"/>
-
-          <!-- connectors: center to outputs -->
-          <path d="M372 176 C396 176, 402 161, 424 161" class="ins-connector"/>
-          <path d="M372 220 C396 220, 402 239, 424 239" class="ins-connector"/>
-
-          <circle cx="372" cy="176" r="4.5" class="ins-node"/>
-          <circle cx="372" cy="220" r="4.5" class="ins-node"/>
-        </svg>
+  <!-- nodes -->
+  <circle cx="222" cy="150" r="5" class="ins-node"/>
+  <circle cx="222" cy="198" r="5" class="ins-node"/>
+  <circle cx="222" cy="246" r="5" class="ins-node"/>
+  <circle cx="372" cy="161" r="5" class="ins-node"/>
+  <circle cx="372" cy="239" r="5" class="ins-node"/>
+</svg>
       </div>
     </div>
   </div>
