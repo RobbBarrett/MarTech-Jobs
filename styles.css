@@ -1000,3 +1000,45 @@ a{
     width:100%;
   }
 }
+.ins-box{
+  fill:#ffffff;
+  stroke:#dbe8df;
+  stroke-width:2;
+}
+
+.ins-box.right{
+  fill:#f7fbf8;
+}
+
+.ins-text{
+  fill:#183128;
+  font-size:14px;
+  font-weight:800;
+  dominant-baseline:middle;
+}
+
+.ins-core{
+  fill:#17865c;
+}
+
+.ins-core-title{
+  fill:#ffffff;
+  font-size:20px;
+  font-weight:800;
+}
+
+.ins-core-sub{
+  fill:rgba(255,255,255,.92);
+  font-size:14px;
+  font-weight:700;
+}
+
+.ins-connector{
+  stroke:#8bbca0;
+  stroke-width:4;
+  stroke-linecap:round;
+}
+
+.ins-node{
+  fill:#17865c;
+}
