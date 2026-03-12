@@ -455,69 +455,84 @@
     </section>
 
     <section id="insight" class="section section-tint">
-      <div class="container">
-        <div class="section-head">
-          <div class="section-label">Insight</div>
-          <h2>Real ROI analysis happens when marketing data joins the rest of the revenue system</h2>
-          <p>
-            Marketo should feed robust analytical environments where campaign interactions,
-            behavioral signals, CRM data, and ad platform activity can be evaluated together.
-          </p>
-        </div>
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label">Insight</div>
+      <h2>Real ROI analysis happens when marketing data joins the rest of the revenue system</h2>
+      <p>
+        Marketo should feed robust analytical environments where campaign interactions,
+        behavioral signals, CRM data, and ad platform activity can be evaluated together.
+      </p>
+    </div>
 
-        <div class="media-grid reverse-mobile">
-          <div class="content-stack">
-            <div class="panel">
-              <h3>What this unlocks</h3>
-              <ul class="check-list">
-                <li>Multi-touch attribution</li>
-                <li>Channel and campaign contribution analysis</li>
-                <li>Pipeline velocity measurement</li>
-                <li>More meaningful marketing ROI</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="visual-card">
-            <svg viewBox="0 0 560 360" class="section-svg" aria-hidden="true">
-              <defs>
-                <linearGradient id="insightGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#9ec9ae"/>
-                  <stop offset="100%" stop-color="#16895e"/>
-                </linearGradient>
-              </defs>
-
-              <rect x="40" y="90" width="110" height="68" rx="16" class="ins-box"/>
-              <text x="95" y="130" text-anchor="middle" class="ins-text">Campaigns</text>
-
-              <rect x="40" y="180" width="110" height="68" rx="16" class="ins-box"/>
-              <text x="95" y="220" text-anchor="middle" class="ins-text">Behavior</text>
-
-              <rect x="40" y="270" width="110" height="68" rx="16" class="ins-box"/>
-              <text x="95" y="310" text-anchor="middle" class="ins-text">CRM</text>
-
-              <path d="M150 124 H250" stroke="url(#insightGrad)" stroke-width="7" stroke-linecap="round"/>
-              <path d="M150 214 H250" stroke="url(#insightGrad)" stroke-width="7" stroke-linecap="round"/>
-              <path d="M150 304 H250" stroke="url(#insightGrad)" stroke-width="7" stroke-linecap="round"/>
-
-              <rect x="250" y="125" width="120" height="180" rx="24" class="ins-core"/>
-              <text x="310" y="178" text-anchor="middle" class="ins-core-title">Analytics</text>
-              <text x="310" y="205" text-anchor="middle" class="ins-core-sub">Model</text>
-              <text x="310" y="230" text-anchor="middle" class="ins-core-sub">Combine</text>
-              <text x="310" y="255" text-anchor="middle" class="ins-core-sub">Interpret</text>
-
-              <path d="M370 214 H465" stroke="url(#insightGrad)" stroke-width="7" stroke-linecap="round"/>
-
-              <rect x="465" y="145" width="70" height="55" rx="14" class="ins-box right"/>
-              <text x="500" y="178" text-anchor="middle" class="ins-text">ROI</text>
-
-              <rect x="465" y="215" width="70" height="55" rx="14" class="ins-box right"/>
-              <text x="500" y="248" text-anchor="middle" class="ins-text">Pipeline</text>
-            </svg>
-          </div>
+    <div class="media-grid reverse-mobile">
+      <div class="content-stack">
+        <div class="panel">
+          <h3>What this unlocks</h3>
+          <ul class="check-list">
+            <li>Multi-touch attribution</li>
+            <li>Channel and campaign contribution analysis</li>
+            <li>Pipeline velocity measurement</li>
+            <li>More meaningful marketing ROI</li>
+          </ul>
         </div>
       </div>
-    </section>
+
+      <div class="visual-card">
+        <svg viewBox="0 0 560 360" class="section-svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="insConnector" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#9cc9ae"/>
+              <stop offset="100%" stop-color="#1a8a5f"/>
+            </linearGradient>
+          </defs>
+
+          <!-- input boxes -->
+          <rect x="52" y="82" width="118" height="66" rx="16" class="ins-box"/>
+          <text x="111" y="122" text-anchor="middle" class="ins-text">Campaigns</text>
+
+          <rect x="52" y="165" width="118" height="66" rx="16" class="ins-box"/>
+          <text x="111" y="205" text-anchor="middle" class="ins-text">Behavior</text>
+
+          <rect x="52" y="248" width="118" height="66" rx="16" class="ins-box"/>
+          <text x="111" y="288" text-anchor="middle" class="ins-text">CRM</text>
+
+          <!-- center block -->
+          <rect x="222" y="104" width="150" height="188" rx="26" class="ins-core"/>
+          <text x="297" y="155" text-anchor="middle" class="ins-core-title">Revenue</text>
+          <text x="297" y="185" text-anchor="middle" class="ins-core-title">Intelligence</text>
+          <text x="297" y="220" text-anchor="middle" class="ins-core-sub">Model</text>
+          <text x="297" y="245" text-anchor="middle" class="ins-core-sub">Combine</text>
+          <text x="297" y="270" text-anchor="middle" class="ins-core-sub">Interpret</text>
+
+          <!-- output boxes -->
+          <rect x="424" y="130" width="90" height="62" rx="16" class="ins-box right"/>
+          <text x="469" y="168" text-anchor="middle" class="ins-text">ROI</text>
+
+          <rect x="424" y="208" width="110" height="62" rx="16" class="ins-box right"/>
+          <text x="479" y="246" text-anchor="middle" class="ins-text">Pipeline</text>
+
+          <!-- connectors: inputs to center -->
+          <path d="M170 115 C198 115, 202 136, 222 150" class="ins-connector"/>
+          <path d="M170 198 C198 198, 202 198, 222 198" class="ins-connector"/>
+          <path d="M170 281 C198 281, 202 260, 222 246" class="ins-connector"/>
+
+          <!-- connector nodes -->
+          <circle cx="222" cy="150" r="4.5" class="ins-node"/>
+          <circle cx="222" cy="198" r="4.5" class="ins-node"/>
+          <circle cx="222" cy="246" r="4.5" class="ins-node"/>
+
+          <!-- connectors: center to outputs -->
+          <path d="M372 176 C396 176, 402 161, 424 161" class="ins-connector"/>
+          <path d="M372 220 C396 220, 402 239, 424 239" class="ins-connector"/>
+
+          <circle cx="372" cy="176" r="4.5" class="ins-node"/>
+          <circle cx="372" cy="220" r="4.5" class="ins-node"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
 
     <section id="impact" class="section impact-section">
       <div class="container impact-wrap">
