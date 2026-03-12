@@ -1042,3 +1042,31 @@ a{
 .ins-node{
   fill:#17865c;
 }
+
+.insight-layout{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:28px;
+  align-items:center;
+}
+
+.insight-image{
+  background:#ffffff;
+  border:1px solid var(--line);
+  border-radius:28px;
+  box-shadow:var(--shadow-soft);
+  padding:18px;
+}
+
+.insight-image img{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:18px;
+}
+
+@media (max-width: 1080px){
+  .insight-layout{
+    grid-template-columns:1fr;
+  }
+}
