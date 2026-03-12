@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Robb Barrett | Senior Marketo Leadership</title>
+  <meta
+    name="description"
+    content="Robb Barrett - enterprise Marketo leader focused on platform ownership, Salesforce integration, AI-enabled automation and revenue-focused marketing operations."
+  />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <style>
+    :root{
+      --bg:#f4f7fb;
+      --bg-2:#eef4f8;
+      --surface:#ffffff;
+      --surface-soft:rgba(255,255,255,.74);
+      --primary:#16253d;
+      --secondary:#1298a8;
+      --tertiary:#f2aa38;
+      --ink:#16253d;
+      --muted:#5f6f87;
+      --line:rgba(22,37,61,.10);
+      --line-strong:rgba(22,37,61,.16);
+      --shadow:0 18px 48px rgba(17, 31, 51, .10);
+      --shadow-lg:0 30px 70px rgba(17, 31, 51, .16);
+      --radius:28px;
+      --radius-sm:20px;
+      --max:1180px;
+      --hero-pad:88px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color:var(--ink);
+      line-height:1.55;
+      background:
+        radial-gradient(circle at 12% 12%, rgba(18,152,168,.10), transparent 24%),
+        radial-gradient(circle at 88% 10%, rgba(242,170,56,.10), transparent 22%),
+        linear-gradient(180deg, #f8fbfd 0%, #f3f6fa 100%);
+      overflow-x:hidden;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    .container{
+      width:min(var(--max), calc(100% - 40px));
+      margin:0 auto;
+    }
+
+    .section{
+      padding:88px 0;
+      position:relative;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 14px;
+      border-radius:999px;
+      background:rgba(18,152,168,.10);
+      color:var(--secondary);
+      font-weight:800;
+      font-size:.84rem;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+    }
+
+    .eyebrow::before{
+      content:"";
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:var(--tertiary);
+      box-shadow:0 0 0 6px rgba(242,170,56,.13);
+    }
+
+    h1,h2,h3,h4,p{margin:0}
+    h1{
+      font-size:clamp(2.8rem, 6vw, 5.2rem);
+      line-height:.95;
+      letter-spacing:-.045em;
+    }
+    h2{
+      font-size:clamp(2rem, 4vw, 3.1rem);
+      line-height:1.02;
+      letter-spacing:-.035em;
+    }
+    h3{
+      font-size:1.28rem;
+      line-height:1.12;
+      letter-spacing:-.02em;
+    }
+
+    .lede{
+      font-size:clamp(1.06rem, 1.8vw, 1.24rem);
+      color:var(--muted);
+      max-width:760px;
+    }
+
+    .muted{color:var(--muted)}
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      padding:34px 0 72px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      width:780px;
+      height:780px;
+      right:-160px;
+      top:-120px;
+      background:radial-gradient(circle, rgba(18,152,168,.11) 0%, rgba(18,152,168,0) 62%);
+      animation:driftA 12s ease-in-out infinite alternate;
+      pointer-events:none;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      width:660px;
+      height:660px;
+      left:-120px;
+      bottom:-200px;
+      background:radial-gradient(circle, rgba(242,170,56,.12) 0%, rgba(242,170,56,0) 64%);
+      animation:driftB 14s ease-in-out infinite alternate;
+      pointer-events:none;
+    }
+
+    @keyframes driftA{
+      from{transform:translate3d(0,0,0) scale(1)}
+      to{transform:translate3d(-24px,18px,0) scale(1.06)}
+    }
+    @keyframes driftB{
+      from{transform:translate3d(0,0,0) scale(1)}
+      to{transform:translate3d(30px,-20px,0) scale(1.08)}
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:38px;
+      align-items:center;
+      position:relative;
+      z-index:1;
+    }
+
+    .hero-copy{
+      display:flex;
+      flex-direction:column;
+      gap:22px;
+    }
+
+    .nameplate{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
+    .monogram{
+      width:54px;
+      height:54px;
+      border-radius:18px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg, var(--primary), #234062);
+      color:#fff;
+      box-shadow:0 16px 30px rgba(22,37,61,.18);
+      font-size:1.18rem;
+      font-weight:900;
+      letter-spacing:.04em;
+    }
+
+    .identity{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+    }
+
+    .identity strong{
+      font-size:1.02rem;
+      letter-spacing:-.02em;
+    }
+
+    .identity span{
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    .hero-copy .sub{
+      font-size:1.12rem;
+      color:var(--muted);
+      max-width:720px;
+    }
+
+    .cta-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:6px;
+    }
+
+    .btn{
+      min-height:52px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:0 22px;
+      border-radius:999px;
+      font-weight:800;
+      transition:.28s ease;
+      border:1px solid transparent;
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg, var(--primary), #234062);
+      color:#fff;
+      box-shadow:0 14px 26px rgba(22,37,61,.18);
+    }
+    .btn-primary:hover{
+      transform:translateY(-2px);
+      box-shadow:0 20px 34px rgba(22,37,61,.22);
+    }
+
+    .btn-secondary{
+      background:rgba(255,255,255,.74);
+      border-color:var(--line);
+      backdrop-filter:blur(12px);
+    }
+    .btn-secondary:hover{
+      transform:translateY(-2px);
+      box-shadow:var(--shadow);
+    }
+
+    .proof-chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:4px;
+    }
+
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      min-height:40px;
+      padding:0 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,.72);
+      border:1px solid rgba(255,255,255,.78);
+      backdrop-filter:blur(12px);
+      box-shadow:0 10px 22px rgba(22,37,61,.08);
+      font-weight:700;
+      color:var(--primary);
+      font-size:.92rem;
+    }
+
+    .chip::before{
+      content:"";
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:var(--secondary);
+      box-shadow:0 0 0 6px rgba(18,152,168,.10);
+      flex:none;
+    }
+
+    .hero-stats{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin-top:2px;
+      max-width:760px;
+    }
+
+    .stat{
+      background:var(--surface-soft);
+      border:1px solid rgba(255,255,255,.82);
+      backdrop-filter:blur(12px);
+      border-radius:20px;
+      box-shadow:var(--shadow);
+      padding:18px 18px 16px;
+      min-height:106px;
+    }
+
+    .stat .num{
+      font-size:1.7rem;
+      line-height:1;
+      font-weight:900;
+      margin-bottom:9px;
+      color:var(--primary);
+    }
+
+    .stat p{
+      font-size:.94rem;
+      color:var(--muted);
+    }
+
+    .framework-wrap{
+      position:relative;
+      min-height:640px;
+    }
+
+    .pulse-dot{
+      position:absolute;
+      width:14px;
+      height:14px;
+      border-radius:50%;
+      background:var(--secondary);
+      box-shadow:0 0 0 12px rgba(18,152,168,.10), 0 0 26px rgba(18,152,168,.34);
+      animation:pulse 2.6s ease-in-out infinite;
+      z-index:0;
+    }
+
+    .pulse-dot.orange{
+      background:var(--tertiary);
+      box-shadow:0 0 0 12px rgba(242,170,56,.12), 0 0 26px rgba(242,170,56,.28);
+    }
+
+    @keyframes pulse{
+      0%,100%{transform:scale(1); opacity:.9}
+      50%{transform:scale(1.28); opacity:1}
+    }
+
+    .framework{
+      position:relative;
+      z-index:1;
+      width:min(100%, 560px);
+      margin:0 auto;
+      background:rgba(255,255,255,.80);
+      backdrop-filter:blur(16px);
+      border:1px solid rgba(255,255,255,.86);
+      border-radius:38px;
+      box-shadow:0 34px 72px rgba(22,37,61,.14);
+      padding:28px;
+      overflow:hidden;
+    }
+
+    .framework::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at 14% 16%, rgba(18,152,168,.05), transparent 18%),
+        radial-gradient(circle at 84% 76%, rgba(242,170,56,.07), transparent 16%);
+      pointer-events:none;
+    }
+
+    .framework-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+      margin-bottom:22px;
+      position:relative;
+      z-index:1;
+    }
+
+    .window-dots{
+      display:flex;
+      gap:9px;
+    }
+
+    .window-dots span{
+      width:11px;
+      height:11px;
+      border-radius:50%;
+      background:#cfd7e3;
+    }
+
+    .framework-badge{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:42px;
+      padding:0 16px;
+      border-radius:999px;
+      background:rgba(18,152,168,.10);
+      color:var(--secondary);
+      font-weight:800;
+      font-size:.92rem;
+      white-space:nowrap;
+    }
+
+    .framework-grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0, 1fr));
+      gap:18px;
+      position:relative;
+      z-index:1;
+    }
+
+    .value-card{
+      background:linear-gradient(180deg, #ffffff 0%, #f8fbfd 100%);
+      border:1px solid var(--line);
+      border-radius:26px;
+      padding:22px 18px;
+      min-height:248px;
+      box-shadow:0 14px 28px rgba(22,37,61,.07);
+      position:relative;
+      transition:.28s ease;
+    }
+
+    .value-card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 20px 36px rgba(22,37,61,.12);
+    }
+
+    .value-card.alt{
+      background:linear-gradient(180deg, #fffdf8 0%, #fff7e8 100%);
+    }
+
+    .value-card .kicker{
+      display:block;
+      font-size:.78rem;
+      font-weight:900;
+      letter-spacing:.09em;
+      text-transform:uppercase;
+      color:var(--secondary);
+      margin-bottom:12px;
+    }
+
+    .value-card h3{
+      font-size:1.08rem;
+      line-height:1.08;
+      margin-bottom:10px;
+      min-height:52px;
+    }
+
+    .value-card p{
+      color:var(--muted);
+      font-size:.96rem;
+      line-height:1.55;
+    }
+
+    .revenue-card{
+      grid-column:1 / -1;
+      min-height:auto;
+      padding:24px 22px;
+      display:grid;
+      grid-template-columns:190px 1fr;
+      gap:18px;
+      align-items:start;
+      background:linear-gradient(135deg, rgba(18,152,168,.06), rgba(255,255,255,.96) 48%, rgba(242,170,56,.08));
+    }
+
+    .connector-line{
+      position:absolute;
+      top:152px;
+      left:0;
+      right:0;
+      height:2px;
+      pointer-events:none;
+      z-index:0;
+    }
+
+    .connector-line::before,
+    .connector-line::after{
+      content:"";
+      position:absolute;
+      width:22%;
+      height:100%;
+      background:linear-gradient(90deg, rgba(18,152,168,.12), var(--secondary), rgba(242,170,56,.42));
+      border-radius:999px;
+      overflow:hidden;
+    }
+
+    .connector-line::before{left:26%}
+    .connector-line::after{right:26%}
+
+    .connector-line span{
+      position:absolute;
+      top:0;
+      width:72px;
+      height:100%;
+      background:linear-gradient(90deg, transparent, rgba(255,255,255,.92), transparent);
+      filter:blur(1px);
+      animation:flow 2.8s linear infinite;
+    }
+
+    .connector-line .c1{left:28%}
+    .connector-line .c2{right:28%; animation-delay:1.2s}
+
+    @keyframes flow{
+      from{transform:translateX(-70px)}
+      to{transform:translateX(180px)}
+    }
+
+    .section-head{
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+      max-width:820px;
+      margin-bottom:34px;
+    }
+
+    .section-subgrid{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:24px;
+      align-items:start;
+    }
+
+    .grid-4{
+      display:grid;
+      grid-template-columns:repeat(4, 1fr);
+      gap:20px;
+    }
+
+    .card{
+      background:rgba(255,255,255,.78);
+      border:1px solid rgba(255,255,255,.82);
+      backdrop-filter:blur(12px);
+      border-radius:26px;
+      box-shadow:var(--shadow);
+      padding:24px;
+      position:relative;
+      transition:.28s ease;
+      overflow:hidden;
+    }
+
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:0 0 auto 0;
+      height:4px;
+      background:linear-gradient(90deg, var(--secondary), var(--tertiary));
+    }
+
+    .card:hover{
+      transform:translateY(-5px);
+      box-shadow:var(--shadow-lg);
+    }
+
+    .icon{
+      width:54px;
+      height:54px;
+      border-radius:18px;
+      display:grid;
+      place-items:center;
+      font-size:1.3rem;
+      margin-bottom:18px;
+      color:var(--primary);
+      background:linear-gradient(135deg, rgba(18,152,168,.12), rgba(242,170,56,.15));
+    }
+
+    .card p{
+      color:var(--muted);
+      margin-top:10px;
+      font-size:.98rem;
+    }
+
+    .band{
+      background:linear-gradient(135deg, #102138 0%, #183253 58%, #124750 100%);
+      color:#fff;
+      overflow:hidden;
+    }
+
+    .band .lede,
+    .band .muted{
+      color:rgba(255,255,255,.78);
+    }
+
+    .impact-grid{
+      display:grid;
+      grid-template-columns:1.02fr .98fr;
+      gap:24px;
+      margin-top:34px;
+    }
+
+    .panel{
+      border-radius:28px;
+      padding:28px;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.12);
+      backdrop-filter:blur(10px);
+      box-shadow:0 20px 40px rgba(0,0,0,.12);
+    }
+
+    .list{
+      display:grid;
+      gap:14px;
+      margin-top:16px;
+    }
+
+    .list-item{
+      display:grid;
+      grid-template-columns:24px 1fr;
+      gap:12px;
+      align-items:start;
+      color:rgba(255,255,255,.9);
+    }
+
+    .tick{
+      width:24px;
+      height:24px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:rgba(18,152,168,.18);
+      color:#fff;
+      font-size:.82rem;
+      font-weight:900;
+      margin-top:1px;
+    }
+
+    .bar-wrap{
+      display:grid;
+      gap:9px;
+      margin-top:16px;
+    }
+
+    .bar-label{
+      display:flex;
+      justify-content:space-between;
+      gap:14px;
+      font-size:.95rem;
+      color:rgba(255,255,255,.86);
+    }
+
+    .bar{
+      height:14px;
+      border-radius:999px;
+      background:rgba(255,255,255,.12);
+      overflow:hidden;
+    }
+
+    .bar > span{
+      display:block;
+      height:100%;
+      border-radius:inherit;
+      background:linear-gradient(90deg, var(--secondary), var(--tertiary));
+      transform-origin:left center;
+      animation:grow 1.3s ease both;
+    }
+
+    @keyframes grow{
+      from{transform:scaleX(.08); opacity:.4}
+      to{transform:scaleX(1); opacity:1}
+    }
+
+    .proof-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+
+    .proof-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:24px;
+      box-shadow:var(--shadow);
+      padding:26px;
+      transition:.28s ease;
+    }
+
+    .proof-card:hover{
+      transform:translateY(-4px);
+      box-shadow:var(--shadow-lg);
+    }
+
+    .proof-card h3{
+      margin-bottom:10px;
+    }
+
+    .proof-card p{
+      color:var(--muted);
+    }
+
+    .role-map{
+      display:grid;
+      gap:14px;
+    }
+
+    .role-row{
+      display:grid;
+      grid-template-columns:220px 1fr;
+      gap:16px;
+      align-items:start;
+      padding:18px 0;
+      border-top:1px solid var(--line);
+    }
+
+    .role-row:first-child{border-top:none; padding-top:0}
+
+    .role-row strong{
+      font-size:1rem;
+      letter-spacing:-.02em;
+    }
+
+    .quote{
+      margin-top:34px;
+      background:linear-gradient(180deg, rgba(18,152,168,.07), rgba(242,170,56,.09));
+      border:1px solid rgba(22,37,61,.08);
+      border-radius:28px;
+      padding:28px;
+      box-shadow:var(--shadow);
+      font-size:clamp(1.12rem, 2vw, 1.36rem);
+      line-height:1.38;
+      letter-spacing:-.02em;
+    }
+
+    .footer-cta{
+      text-align:center;
+      padding:24px 0 92px;
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(24px);
+      transition:opacity .72s ease, transform .72s ease;
+    }
+
+    .reveal.is-visible{
+      opacity:1;
+      transform:none;
+    }
+
+    @media (max-width: 1080px){
+      .hero{
+        min-height:auto;
+        padding-top:28px;
+      }
+      .hero-grid,
+      .section-subgrid,
+      .impact-grid{
+        grid-template-columns:1fr;
+      }
+      .grid-4{
+        grid-template-columns:repeat(2,1fr);
+      }
+      .proof-grid{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width: 760px){
+      .container{
+        width:min(var(--max), calc(100% - 24px));
+      }
+      .hero-stats{
+        grid-template-columns:1fr;
+      }
+      .grid-4{
+        grid-template-columns:1fr;
+      }
+      .framework{
+        padding:22px;
+        border-radius:28px;
+      }
+      .framework-grid{
+        grid-template-columns:1fr;
+      }
+      .value-card{
+        min-height:auto;
+      }
+      .revenue-card{
+        grid-template-columns:1fr;
+      }
+      .connector-line{
+        display:none;
+      }
+      .proof-chips{
+        gap:8px;
+      }
+      .role-row{
+        grid-template-columns:1fr;
+        gap:8px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero" id="top">
+    <div class="container hero-grid">
+      <div class="hero-copy reveal">
+        <div class="eyebrow">Senior Marketo Leadership</div>
+
+        <div class="nameplate">
+          <div class="monogram">RB</div>
+          <div class="identity">
+            <strong>Robb Barrett</strong>
+            <span>Marketing Operations Leader | Marketo | Salesforce | Campaign Analytics</span>
+          </div>
+        </div>
+
+        <h1>I lead enterprise Marketo ecosystems that scale operations and improve revenue visibility.</h1>
+
+        <p class="sub">
+          Senior marketing operations leader with deep Marketo and Salesforce experience, focused on platform ownership, team leadership, AI-enabled automation and cross-functional execution in complex enterprise environments.
+        </p>
+
+        <div class="proof-chips">
+          <div class="chip">15+ years in marketing operations</div>
+          <div class="chip">Enterprise Marketo architecture</div>
+          <div class="chip">Revenue-focused analytics</div>
+          <div class="chip">AI-ready process design</div>
+          <div class="chip">Cross-functional leadership</div>
+        </div>
+
+        <div class="cta-row">
+          <a href="#fit" class="btn btn-primary">Why I fit this role</a>
+          <a href="#experience" class="btn btn-secondary">View experience</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="num" data-count="15">0</div>
+            <p>Years building campaign operations, reporting frameworks and scalable marketing systems</p>
+          </div>
+          <div class="stat">
+            <div class="num" data-count="4">0</div>
+            <p>Core areas aligned to this role: <bold>leadership</bold>, <bold>ownership</bold>, <bold>integration</bold> and <bold>AI operations</bold></p>
+          </div>
+          <div class="stat">
+            <div class="num" data-count="100">0</div>
+            <p>Bias toward measurable business impact (revenue) over vanity metrics</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="framework-wrap reveal">
+        <span class="pulse-dot" style="top:12%; left:0%"></span>
+        <span class="pulse-dot orange" style="top:72%; right:1%"></span>
+        <span class="pulse-dot" style="bottom:8%; left:12%"></span>
+
+        <div class="framework">
+          <div class="framework-top">
+            <div class="window-dots"><span></span><span></span><span></span></div>
+            <div class="framework-badge">Why I fit this role</div>
+          </div>
+
+          <div class="connector-line">
+            <span class="c1"></span>
+            <span class="c2"></span>
+          </div>
+
+          <div class="framework-grid">
+
+            <div class="value-card">
+              <span class="kicker">Ownership</span>
+              <h3>Platform Ownership</h3>
+              <p>I design and govern Marketo environments with scalable programs, scoring, segmentation, hygiene and structure tied to business goals</p>
+            
+            </div><div class="value-card">
+              <span class="kicker">Leadership</span>
+              <h3>Team Leadership</h3>
+              <p>I lead with clear communication, ensuring collarboration and well defined job responsibilities</p>
+            </div>
+
+            <div class="value-card alt">
+              <span class="kicker">Integration</span>
+              <h3>Enterprise Integration</h3>
+              <p>I connect Marketo with Salesforce and adjacent systems through clean data flows, sync logic, API-aware design and troubleshooting discipline</p>
+            </div>
+
+            <div class="value-card revenue-card">
+              <div>
+                <span class="kicker">AI + Operations</span>
+                <h3>AI + Operational Excellence</h3>
+              </div>
+              <p>I turn AI from a buzzword into workflow: identifying use cases, piloting automation, measuring impact, documenting what scales and helping teams adopt to a new way of doing business</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal" id="fit">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Aligned to Marketing Operations</div>
+        <h2>Built for the exact work this role requires.</h2>
+        <p class="lede">
+          This role combines strong project management, platform leadership, cross-functional integration, AI enablement and operational rigor. That is the lane I’ve been building toward for years
+        </p>
+      </div>
+
+      <div class="grid-4">
+        <div class="card">
+          <div class="icon">👥</div>
+          <h3>Lead the Marketo function</h3>
+          <p>Support specialists, handle escalations, improve execution quality and create the working standards that keep a team efficient</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🧱</div>
+          <h3>Own platform architecture</h3>
+          <p>Build and govern Marketo with a bias toward scalability, maintainability, segmentation quality and operational stability</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🔌</div>
+          <h3>Connect the ecosystem</h3>
+          <p>Translate marketing needs into structured platform behavior across CRM, automation, reporting and API-aware data flows</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🤖</div>
+          <h3>Operationalize AI responsibly</h3>
+          <p>Use AI where it improves workflows, insight or data quality - then measure the impact so it becomes an evolving process</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band reveal">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Operating Model</div>
+        <h2>How I would create value in this seat.</h2>
+        <p class="lede">
+          The job is bigger than campaign execution. It needs leadership, systems judgment, clean integrations and repeatable processes
+        </p>
+      </div>
+
+      <div class="impact-grid">
+        <div class="panel">
+          <h3>What I bring to enterprise Marketing Operations leadership</h3>
+          <div class="list">
+           <div class="list-item">
+              <div class="tick">✓</div>
+              <div>Project management to integrate organization, documentation, transparency and accountability while showing status and risks</div>
+            </div>
+           <div class="list-item">
+              <div class="tick">✓</div>
+              <div>Experience implementing, migrating, optimizing and managing SMB to Enterprise sized Marketo systems </div>
+            </div>
+            <div class="list-item">
+              <div class="tick">✓</div>
+              <div>Hands-on Marketo depth with enterprise campaign and lifecycle thinking</div>
+            </div>
+            <div class="list-item">
+              <div class="tick">✓</div>
+              <div>Strong Salesforce orientation and comfort working through sync, structure and data logic</div>
+            </div>
+            <div class="list-item">
+              <div class="tick">✓</div>
+              <div>Revenue-minded analytics, attribution thinking and measurement discipline</div>
+            </div>
+            <div class="list-item">
+              <div class="tick">✓</div>
+              <div>Change management instincts grounded in documentation, clarity and stakeholder trust</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>Where I’d focus first</h3>
+
+          <div class="bar-wrap">
+            <div class="bar-label"><span>Platform governance</span><span>Priority</span></div>
+            <div class="bar"><span style="width:92%"></span></div>
+          </div>
+
+          <div class="bar-wrap">
+            <div class="bar-label"><span>Team standards and QA</span><span>Priority</span></div>
+            <div class="bar"><span style="width:90%"></span></div>
+          </div>
+
+          <div class="bar-wrap">
+            <div class="bar-label"><span>Integration stability</span><span>Priority</span></div>
+            <div class="bar"><span style="width:88%"></span></div>
+          </div>
+
+          <div class="bar-wrap">
+            <div class="bar-label"><span>AI workflow adoption</span><span>Measured rollout</span></div>
+            <div class="bar"><span style="width:80%"></span></div>
+          </div>
+
+          <div class="quote">
+            Marketing should not feel mysterious. The goal is a platform and team leaders can trust
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal" id="experience">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Relevant Experience</div>
+        <h2>Experience that maps to platform ownership, operations and analytics.</h2>
+        <p class="lede">
+          My background spans enterprise marketing operations, Marketo consulting, system migrations, campaign optimization and revenue-focused reporting across complex organizations
+        </p>
+      </div>
+
+      <div class="proof-grid">
+        <div class="proof-card">
+          <h3>Enterprise Systems</h3>
+          <p>Architecting and improving Marketo ecosystems supporting enterprise organizations including AWS, UPS, Cisco, Walmart and others across consulting and in-house work</p>
+        </div>
+
+        <div class="proof-card">
+          <h3>Marketing Operations</h3>
+          <p>Building scalable campaign structures, reporting models, lifecycle logic, data discipline and operational processes that connect execution to outcomes</p>
+        </div>
+
+        <div class="proof-card">
+          <h3>Campaign Analytics</h3>
+          <p>Using attribution, funnel measurement and performance analysis to shift focus from volume metrics to the signals that actually move pipeline</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Role Mapping</div>
+        <h2>How my background lines up with the role.</h2>
+      </div>
+
+      <div class="card">
+        <div class="role-map">
+          <div class="role-row">
+            <strong>Team leadership and execution</strong>
+            <div class="muted">Lead through standards, support, troubleshooting discipline and calm cross-functional communication. I’m most useful when execution quality matters and the team needs both structure and help</div>
+          </div>
+
+          <div class="role-row">
+            <strong>Platform ownership</strong>
+            <div class="muted">Strong Marketo orientation across architecture, campaign flow, segmentation, scoring, governance, system hygiene and business-aligned execution</div>
+          </div>
+
+          <div class="role-row">
+            <strong>Integration and ecosystem enablement</strong>
+            <div class="muted">Deep experience working across CRM, automation and reporting structures, with a practical understanding of sync behavior, process dependencies and API-aware design</div>
+          </div>
+
+          <div class="role-row">
+            <strong>AI and automation innovation</strong>
+            <div class="muted">Focused on AI as workflow improvement - title normalization, signal classification, automation opportunities and measurement loops that show whether the experiment provided revenue</div>
+          </div>
+
+          <div class="role-row">
+            <strong>Operational excellence</strong>
+            <div class="muted">Documentation, process clarity, measurement rigor and stakeholder trust are not side dishes. They are the machinery that lets complex platforms scale</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container footer-cta reveal">
+    <div class="section-head" style="margin:0 auto 24px; text-align:center; align-items:center;">
+      <div class="eyebrow">Closing</div>
+      <h2>A strong Marketo leader should make complexity easier to trust.</h2>
+      <p class="lede" style="text-align:center;">
+        That’s the value I’d aim to bring - strong systems judgment, practical leadership, cleaner operations and a platform teams can actually rely on
+      </p>
+    </div>
+
+    <a href="#top" class="btn btn-primary">Back to top</a>
+  </div>
+
+  <script>
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        }
+      });
+    }, { threshold: 0.14 });
+
+    revealEls.forEach(el => revealObserver.observe(el));
+
+    const counters = document.querySelectorAll('[data-count]');
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = Number(el.dataset.count);
+        const duration = 1400;
+        const start = performance.now();
+
+        function update(now){
+          const progress = Math.min((now - start) / duration, 1);
+          const value = Math.floor(progress * target);
+          el.textContent = value + (target === 100 ? '%' : '+');
+          if (progress < 1) requestAnimationFrame(update);
+        }
+
+        requestAnimationFrame(update);
+        counterObserver.unobserve(el);
+      });
+    }, { threshold: 0.45 });
+
+    counters.forEach(counter => counterObserver.observe(counter));
+  </script>
+</body>
+</html>
