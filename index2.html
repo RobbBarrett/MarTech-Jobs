@@ -1,200 +1,828 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Marketing Intelligence Architecture | Robb Barrett</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marketing Intelligence Architecture | Robb Barrett</title>
+  <style>
+    :root{
+      --bg:#f4f7fb;
+      --surface:#ffffff;
+      --surface-2:#eef4f8;
+      --primary:#15263f;
+      --secondary:#0fa3b1;
+      --tertiary:#f9a826;
+      --ink:#15263f;
+      --muted:#5d6b82;
+      --line:rgba(21,38,63,.10);
+      --shadow:0 16px 50px rgba(16, 32, 56, .10);
+      --shadow-hover:0 24px 60px rgba(16, 32, 56, .18);
+      --radius:24px;
+      --radius-sm:16px;
+      --max:1200px;
+    }
 
-<style>
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(15,163,177,.08), transparent 28%),
+        radial-gradient(circle at top right, rgba(249,168,38,.10), transparent 24%),
+        linear-gradient(180deg, #f8fbfd 0%, #f3f6fa 100%);
+      color:var(--ink);
+      line-height:1.55;
+      overflow-x:hidden;
+    }
 
-body{
-font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
-margin:0;
-background:#F4F6F8;
-color:#1B2A41;
-line-height:1.6;
-}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
 
-.section{
-padding:80px 20px;
-max-width:1200px;
-margin:auto;
-}
+    .container{
+      width:min(var(--max), calc(100% - 40px));
+      margin:0 auto;
+    }
 
-.hero{
-background:linear-gradient(135deg,#1B2A41,#243B55);
-color:white;
-text-align:center;
-padding:120px 20px;
-}
+    .section{
+      padding:88px 0;
+      position:relative;
+    }
 
-.hero h1{
-font-size:48px;
-margin-bottom:20px;
-}
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 14px;
+      border-radius:999px;
+      background:rgba(15,163,177,.10);
+      color:var(--secondary);
+      font-weight:700;
+      font-size:.85rem;
+      letter-spacing:.02em;
+    }
 
-.hero p{
-font-size:20px;
-opacity:.85;
-}
+    .eyebrow::before{
+      content:"";
+      width:8px;height:8px;border-radius:50%;
+      background:var(--tertiary);
+      box-shadow:0 0 0 6px rgba(249,168,38,.14);
+    }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:40px;
-margin-top:40px;
-}
+    h1,h2,h3,p{margin:0}
+    h1{
+      font-size:clamp(2.7rem, 7vw, 5rem);
+      line-height:.96;
+      letter-spacing:-.04em;
+    }
+    h2{
+      font-size:clamp(2rem, 4vw, 3.2rem);
+      line-height:1.02;
+      letter-spacing:-.03em;
+    }
+    h3{
+      font-size:1.2rem;
+      line-height:1.15;
+      letter-spacing:-.02em;
+    }
 
-.card{
-background:white;
-padding:30px;
-border-radius:10px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-}
+    .lede{
+      font-size:clamp(1.05rem, 1.8vw, 1.3rem);
+      color:var(--muted);
+      max-width:760px;
+    }
 
-.icon{
-font-size:32px;
-color:#0FA3B1;
-margin-bottom:10px;
-}
+    .hero{
+      padding:36px 0 72px;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      position:relative;
+      overflow:hidden;
+    }
 
-.diagram{
-background:white;
-padding:50px;
-border-radius:12px;
-box-shadow:0 15px 40px rgba(0,0,0,.1);
-margin-top:40px;
-text-align:center;
-}
+    .hero::before{
+      content:"";
+      position:absolute; inset:-20% -10% auto auto;
+      width:720px; height:720px;
+      background:
+        radial-gradient(circle, rgba(15,163,177,.14) 0%, rgba(15,163,177,0) 58%);
+      animation: drift 10s ease-in-out infinite alternate;
+      pointer-events:none;
+    }
 
-.layer{
-padding:20px;
-margin:10px auto;
-max-width:400px;
-border-radius:8px;
-color:white;
-}
+    .hero::after{
+      content:"";
+      position:absolute; inset:auto auto -15% -10%;
+      width:620px; height:620px;
+      background:
+        radial-gradient(circle, rgba(249,168,38,.14) 0%, rgba(249,168,38,0) 62%);
+      animation: drift 13s ease-in-out infinite alternate-reverse;
+      pointer-events:none;
+    }
 
-.layer.signals{background:#0FA3B1;}
-.layer.data{background:#1B2A41;}
-.layer.ai{background:#F9A826;}
-.layer.revenue{background:#243B55;}
+    @keyframes drift{
+      from{transform:translate3d(0,0,0) scale(1)}
+      to{transform:translate3d(30px,-25px,0) scale(1.08)}
+    }
 
-.dark{
-background:#1B2A41;
-color:white;
-}
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.15fr .95fr;
+      gap:38px;
+      align-items:center;
+      position:relative;
+      z-index:1;
+    }
 
-.dark h2{
-color:white;
-}
+    .hero-copy{
+      display:flex;
+      flex-direction:column;
+      gap:22px;
+    }
 
-</style>
+    .hero-copy .sub{
+      max-width:700px;
+      font-size:1.15rem;
+      color:var(--muted);
+    }
+
+    .cta-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:10px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:52px;
+      padding:0 22px;
+      border-radius:999px;
+      font-weight:700;
+      transition:.28s ease;
+      border:1px solid transparent;
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg, var(--primary), #223b5d);
+      color:#fff;
+      box-shadow:0 14px 28px rgba(21,38,63,.20);
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-2px);
+      box-shadow:0 20px 38px rgba(21,38,63,.26);
+    }
+
+    .btn-secondary{
+      background:#fff;
+      border-color:var(--line);
+      color:var(--primary);
+    }
+
+    .btn-secondary:hover{
+      transform:translateY(-2px);
+      box-shadow:var(--shadow);
+    }
+
+    .hero-stats{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin-top:8px;
+      max-width:720px;
+    }
+
+    .stat{
+      background:rgba(255,255,255,.72);
+      backdrop-filter: blur(10px);
+      border:1px solid rgba(255,255,255,.65);
+      border-radius:18px;
+      box-shadow:var(--shadow);
+      padding:18px 18px 16px;
+      min-height:100px;
+    }
+
+    .stat .num{
+      font-size:1.7rem;
+      font-weight:800;
+      color:var(--primary);
+      line-height:1;
+      margin-bottom:8px;
+    }
+
+    .stat p{
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    .visual-shell{
+      position:relative;
+      min-height:600px;
+    }
+
+    .signal-orbit{
+      position:absolute; inset:0;
+      border-radius:36px;
+      overflow:hidden;
+    }
+
+    .signal-dot{
+      position:absolute;
+      width:12px; height:12px;
+      border-radius:50%;
+      background:var(--secondary);
+      box-shadow:0 0 0 10px rgba(15,163,177,.10), 0 0 26px rgba(15,163,177,.35);
+      animation:pulse 2.8s ease-in-out infinite;
+    }
+
+    .signal-dot.orange{
+      background:var(--tertiary);
+      box-shadow:0 0 0 10px rgba(249,168,38,.12), 0 0 26px rgba(249,168,38,.34);
+    }
+
+    @keyframes pulse{
+      0%,100%{transform:scale(1); opacity:.9}
+      50%{transform:scale(1.25); opacity:1}
+    }
+
+    .dashboard{
+      position:relative;
+      z-index:2;
+      margin:34px auto 0;
+      width:min(100%, 520px);
+      background:rgba(255,255,255,.78);
+      backdrop-filter:blur(16px);
+      border:1px solid rgba(255,255,255,.8);
+      border-radius:32px;
+      box-shadow:0 30px 70px rgba(21,38,63,.18);
+      padding:26px;
+    }
+
+    .dashboard-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:18px;
+    }
+
+    .window-dots{
+      display:flex; gap:8px;
+    }
+
+    .window-dots span{
+      width:10px;height:10px;border-radius:50%;
+      background:#d3dce7;
+    }
+
+    .mini-tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size:.82rem;
+      font-weight:700;
+      color:var(--secondary);
+      background:rgba(15,163,177,.08);
+      padding:7px 12px;
+      border-radius:999px;
+    }
+
+    .system-map{
+      display:grid;
+      gap:16px;
+    }
+
+    .system-row{
+      display:grid;
+      grid-template-columns:1fr auto 1fr auto 1fr;
+      align-items:center;
+      gap:14px;
+    }
+
+    .node{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:18px 16px;
+      box-shadow:0 10px 25px rgba(21,38,63,.07);
+      min-height:100px;
+      position:relative;
+      transition:.28s ease;
+    }
+
+    .node:hover{
+      transform:translateY(-4px);
+      box-shadow:var(--shadow-hover);
+    }
+
+    .node .label{
+      display:inline-block;
+      font-size:.76rem;
+      font-weight:800;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      margin-bottom:10px;
+      color:var(--secondary);
+    }
+
+    .node h3{
+      margin-bottom:8px;
+    }
+
+    .node p{
+      font-size:.92rem;
+      color:var(--muted);
+    }
+
+    .connector{
+      width:46px;
+      height:4px;
+      background:linear-gradient(90deg, rgba(15,163,177,.2), var(--secondary), rgba(249,168,38,.4));
+      border-radius:999px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .connector::after{
+      content:"";
+      position:absolute;
+      inset:0 auto 0 -35%;
+      width:35%;
+      background:rgba(255,255,255,.85);
+      filter:blur(2px);
+      animation:flow 2.6s linear infinite;
+    }
+
+    @keyframes flow{
+      to{left:110%}
+    }
+
+    .node.primary{background:linear-gradient(180deg, #ffffff 0%, #f7fbfd 100%)}
+    .node.secondary{background:linear-gradient(180deg, #ffffff 0%, #f5fbfc 100%)}
+    .node.tertiary{background:linear-gradient(180deg, #fffdf7 0%, #fff8ea 100%)}
+
+    .section-head{
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+      max-width:780px;
+      margin-bottom:36px;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:20px;
+    }
+
+    .card{
+      background:rgba(255,255,255,.78);
+      backdrop-filter:blur(10px);
+      border:1px solid rgba(255,255,255,.75);
+      border-radius:24px;
+      box-shadow:var(--shadow);
+      padding:24px;
+      transition:.3s ease;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:0 0 auto 0;
+      height:4px;
+      background:linear-gradient(90deg, var(--secondary), var(--tertiary));
+    }
+
+    .card:hover{
+      transform:translateY(-6px);
+      box-shadow:var(--shadow-hover);
+    }
+
+    .icon{
+      width:52px;
+      height:52px;
+      border-radius:16px;
+      display:grid;
+      place-items:center;
+      font-size:1.35rem;
+      margin-bottom:18px;
+      background:linear-gradient(135deg, rgba(15,163,177,.12), rgba(249,168,38,.14));
+      color:var(--primary);
+    }
+
+    .card p{
+      margin-top:10px;
+      color:var(--muted);
+    }
+
+    .band{
+      background:linear-gradient(135deg, #11233b 0%, #193253 58%, #123f49 100%);
+      color:#fff;
+      overflow:hidden;
+    }
+
+    .band .lede{
+      color:rgba(255,255,255,.78);
+    }
+
+    .impact-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:24px;
+      align-items:stretch;
+      margin-top:34px;
+    }
+
+    .panel{
+      border-radius:28px;
+      padding:28px;
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.12);
+      backdrop-filter:blur(8px);
+      box-shadow:0 20px 40px rgba(0,0,0,.12);
+    }
+
+    .bars{
+      display:grid;
+      gap:18px;
+      margin-top:8px;
+    }
+
+    .bar-wrap{
+      display:grid;
+      gap:8px;
+    }
+
+    .bar-label{
+      display:flex;
+      justify-content:space-between;
+      gap:14px;
+      font-size:.95rem;
+      color:rgba(255,255,255,.86);
+    }
+
+    .bar{
+      height:14px;
+      border-radius:999px;
+      background:rgba(255,255,255,.12);
+      overflow:hidden;
+      position:relative;
+    }
+
+    .bar > span{
+      display:block;
+      height:100%;
+      border-radius:inherit;
+      background:linear-gradient(90deg, var(--secondary), var(--tertiary));
+      transform-origin:left center;
+      animation:grow 1.4s ease both;
+    }
+
+    @keyframes grow{
+      from{transform:scaleX(.1); opacity:.4}
+      to{transform:scaleX(1); opacity:1}
+    }
+
+    .experience-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+
+    .exp-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:26px;
+      box-shadow:var(--shadow);
+      transition:.28s ease;
+    }
+
+    .exp-card:hover{
+      transform:translateY(-4px);
+      box-shadow:var(--shadow-hover);
+    }
+
+    .exp-card h3{
+      margin-bottom:10px;
+    }
+
+    .exp-card p{
+      color:var(--muted);
+    }
+
+    .quote{
+      margin-top:34px;
+      background:linear-gradient(180deg, rgba(15,163,177,.07), rgba(249,168,38,.08));
+      border:1px solid rgba(21,38,63,.08);
+      border-radius:28px;
+      padding:30px;
+      box-shadow:var(--shadow);
+      font-size:clamp(1.15rem, 2vw, 1.45rem);
+      line-height:1.35;
+      letter-spacing:-.02em;
+    }
+
+    .footer-cta{
+      text-align:center;
+      padding:26px 0 90px;
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(24px);
+      transition:opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.is-visible{
+      opacity:1;
+      transform:none;
+    }
+
+    @media (max-width: 1080px){
+      .hero-grid,
+      .impact-grid{
+        grid-template-columns:1fr;
+      }
+      .cards{
+        grid-template-columns:repeat(2,1fr);
+      }
+      .experience-grid{
+        grid-template-columns:1fr;
+      }
+      .hero{
+        min-height:auto;
+        padding-top:34px;
+      }
+    }
+
+    @media (max-width: 760px){
+      .container{width:min(var(--max), calc(100% - 24px))}
+      .hero-stats{grid-template-columns:1fr}
+      .cards{grid-template-columns:1fr}
+      .system-row{
+        grid-template-columns:1fr;
+      }
+      .connector{
+        width:4px;
+        height:36px;
+        margin:0 auto;
+        background:linear-gradient(180deg, rgba(15,163,177,.2), var(--secondary), rgba(249,168,38,.4));
+      }
+      .connector::after{
+        inset:-35% 0 auto 0;
+        width:100%;
+        height:35%;
+        animation:flowVertical 2.4s linear infinite;
+      }
+      @keyframes flowVertical{
+        to{top:110%}
+      }
+      .dashboard{
+        padding:20px;
+        border-radius:24px;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<section class="hero">
-<h1>Turning Marketing Signals Into Revenue Intelligence</h1>
-<p>Designing scalable Marketo architectures that transform marketing activity into actionable buyer insight.</p>
-</section>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy reveal">
+        <div class="eyebrow">Marketing Intelligence Architecture</div>
+        <h1>Turning marketing signals into revenue intelligence.</h1>
+        <p class="sub">
+          I design scalable Marketo systems that capture buyer behavior, structure messy data, and turn marketing activity into something leadership can actually use.
+        </p>
 
-<section class="section">
+        <div class="cta-row">
+          <a href="#system" class="btn btn-primary">See the system</a>
+          <a href="#architecture" class="btn btn-secondary">View architecture</a>
+        </div>
 
-<h2>The Marketing Intelligence System</h2>
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="num" data-count="15">0</div>
+            <p>Years in marketing operations and campaign systems</p>
+          </div>
+          <div class="stat">
+            <div class="num" data-count="4">0</div>
+            <p>Core layers: signals, automation, AI, revenue</p>
+          </div>
+          <div class="stat">
+            <div class="num" data-count="100">0</div>
+            <p>Focus on buyer behavior, not vanity metrics</p>
+          </div>
+        </div>
+      </div>
 
-<div class="diagram">
+      <div class="visual-shell reveal">
+        <div class="signal-orbit">
+          <span class="signal-dot" style="top:8%; left:14%"></span>
+          <span class="signal-dot orange" style="top:17%; right:9%"></span>
+          <span class="signal-dot" style="top:46%; left:2%"></span>
+          <span class="signal-dot orange" style="bottom:17%; left:18%"></span>
+          <span class="signal-dot" style="bottom:8%; right:12%"></span>
+          <span class="signal-dot orange" style="top:64%; right:4%"></span>
+        </div>
 
-<div class="layer signals">Behavior Signals<br>Ads · Web · Email · Events</div>
+        <div class="dashboard">
+          <div class="dashboard-top">
+            <div class="window-dots"><span></span><span></span><span></span></div>
+            <div class="mini-tag">Live signal model</div>
+          </div>
 
-↓  
+          <div class="system-map" id="system">
+            <div class="system-row">
+              <div class="node secondary">
+                <span class="label">Signals</span>
+                <h3>Behavior Signals</h3>
+                <p>Ads, web, email, events and response patterns flowing into one measurable system.</p>
+              </div>
+              <div class="connector"></div>
+              <div class="node primary">
+                <span class="label">Automation</span>
+                <h3>Marketo + CRM</h3>
+                <p>Structured campaigns, scoring, routing and lifecycle logic that actually scales.</p>
+              </div>
+              <div class="connector"></div>
+              <div class="node tertiary">
+                <span class="label">AI Layer</span>
+                <h3>Normalization</h3>
+                <p>Titles, intent and account clues translated into usable intelligence instead of chaos.</p>
+              </div>
+            </div>
 
-<div class="layer data">Automation Layer<br>Marketo · CRM · Tracking</div>
+            <div class="system-row" style="margin-top:4px;">
+              <div class="node primary" style="grid-column:2 / span 3;">
+                <span class="label">Revenue</span>
+                <h3>Attribution + Pipeline Insight</h3>
+                <p>Marketing becomes a source of buyer intelligence, pipeline movement and decision support.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-↓
+  <section class="section reveal" id="architecture">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Architecture</div>
+        <h2>A marketing system people can understand at a glance.</h2>
+        <p class="lede">
+          The page should not feel like a manual. It should feel like a live campaign environment — structured, optimistic and visually clear about how the machine works.
+        </p>
+      </div>
 
-<div class="layer ai">AI Classification<br>Title Normalization · Intent Modeling</div>
+      <div class="cards">
+        <div class="card">
+          <div class="icon">⚙️</div>
+          <h3>Automation</h3>
+          <p>Behavior-driven Marketo systems that capture interactions and translate them into structured, reportable data.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🧠</div>
+          <h3>AI Data Layer</h3>
+          <p>AI normalization cleans up inconsistent titles, roles and account signals so your reports stop hallucinating nonsense.</p>
+        </div>
+        <div class="card">
+          <div class="icon">📈</div>
+          <h3>Intent Modeling</h3>
+          <p>Signals are weighted across channels to spot actual buying behavior instead of inflated upper-funnel confetti.</p>
+        </div>
+        <div class="card">
+          <div class="icon">💼</div>
+          <h3>Revenue Insight</h3>
+          <p>Attribution and velocity reporting connect activity to pipeline, helping leadership see what matters and cut what doesn’t.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-↓
+  <section class="section band reveal">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Impact</div>
+        <h2>Marketing should feel measurable, not mystical.</h2>
+        <p class="lede">
+          Most teams measure activity. The better question is whether those activities reveal buyer behavior and move revenue.
+        </p>
+      </div>
 
-<div class="layer revenue">Revenue Intelligence<br>Attribution · Pipeline Velocity · Deal Influence</div>
+      <div class="impact-grid">
+        <div class="panel">
+          <h3 style="margin-bottom:14px;">Why this model works</h3>
+          <p style="color:rgba(255,255,255,.78); margin-bottom:22px;">
+            The system is built to turn scattered engagement into structured intelligence that sales, marketing and leadership can actually use.
+          </p>
 
-</div>
+          <div class="bars">
+            <div class="bar-wrap">
+              <div class="bar-label"><span>Behavior visibility</span><span>High</span></div>
+              <div class="bar"><span style="width:92%"></span></div>
+            </div>
+            <div class="bar-wrap">
+              <div class="bar-label"><span>Data consistency</span><span>Improved</span></div>
+              <div class="bar"><span style="width:84%"></span></div>
+            </div>
+            <div class="bar-wrap">
+              <div class="bar-label"><span>Revenue attribution</span><span>Clearer</span></div>
+              <div class="bar"><span style="width:88%"></span></div>
+            </div>
+            <div class="bar-wrap">
+              <div class="bar-label"><span>Executive usability</span><span>Stronger</span></div>
+              <div class="bar"><span style="width:90%"></span></div>
+            </div>
+          </div>
+        </div>
 
-</section>
+        <div class="panel">
+          <h3 style="margin-bottom:14px;">The shift</h3>
+          <p style="color:rgba(255,255,255,.78);">
+            When signals are classified, scored and tied to pipeline, marketing stops being a content factory and starts acting like a decision engine.
+          </p>
 
-<section class="section dark">
+          <div class="quote">
+            “Effective marketing systems measure buyer behavior — not just clicks, opens and other noisy little vanity goblins.”
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<h2>Marketing Architecture</h2>
+  <section class="section reveal">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Experience</div>
+        <h2>Built for enterprise complexity, not brochureware.</h2>
+        <p class="lede">
+          The value here is not just campaign execution. It is architecture, integration, measurement and the judgment to connect marketing systems to revenue outcomes.
+        </p>
+      </div>
 
-<div class="grid">
+      <div class="experience-grid">
+        <div class="exp-card">
+          <h3>Enterprise Systems</h3>
+          <p>Architecting Marketo ecosystems supporting organizations including AWS, Walmart, UPS and Cisco.</p>
+        </div>
+        <div class="exp-card">
+          <h3>Marketing Operations</h3>
+          <p>Building scalable campaign frameworks, integration strategy, attribution models and performance reporting.</p>
+        </div>
+        <div class="exp-card">
+          <h3>Data Strategy</h3>
+          <p>Combining CRM, behavioral tracking and AI classification to unify fragmented marketing intelligence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<div class="card">
-<div class="icon">⚙️</div>
-<h3>Automation</h3>
-<p>Behavior driven Marketo systems that capture every buyer interaction and translate activity into structured data.</p>
-</div>
+  <div class="container footer-cta reveal">
+    <a href="#top" class="btn btn-primary">Back to top</a>
+  </div>
 
-<div class="card">
-<div class="icon">🧠</div>
-<h3>AI Data Layer</h3>
-<p>AI normalization transforms inconsistent titles and company data into meaningful organizational intelligence.</p>
-</div>
+  <script>
+    const revealEls = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('is-visible');
+        }
+      });
+    }, {threshold: 0.14});
 
-<div class="card">
-<div class="icon">📊</div>
-<h3>Intent Modeling</h3>
-<p>Buyer signals are evaluated across channels to detect real purchase intent instead of surface engagement metrics.</p>
-</div>
+    revealEls.forEach(el => io.observe(el));
 
-<div class="card">
-<div class="icon">💰</div>
-<h3>Revenue Insight</h3>
-<p>Marketing attribution connects behavior patterns directly to pipeline velocity and closed revenue.</p>
-</div>
+    const counters = document.querySelectorAll('[data-count]');
+    const countObserver = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = Number(el.dataset.count);
+        const duration = 1400;
+        const start = performance.now();
 
-</div>
+        function update(now){
+          const progress = Math.min((now - start) / duration, 1);
+          const value = Math.floor(progress * target);
+          el.textContent = value + (target === 100 ? '%' : '+');
+          if(progress < 1) requestAnimationFrame(update);
+        }
+        requestAnimationFrame(update);
+        countObserver.unobserve(el);
+      });
+    }, {threshold: 0.5});
 
-</section>
-
-<section class="section">
-
-<h2>Experience</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>Enterprise Systems</h3>
-<p>Architecting Marketo ecosystems supporting organizations including AWS, Walmart, UPS, and Cisco.</p>
-</div>
-
-<div class="card">
-<h3>Marketing Operations</h3>
-<p>Building scalable campaign frameworks, attribution models, and revenue reporting systems.</p>
-</div>
-
-<div class="card">
-<h3>Data Strategy</h3>
-<p>Integrating CRM, behavioral tracking, and AI classification to unify marketing intelligence.</p>
-</div>
-
-</div>
-
-</section>
-
-<section class="section dark">
-
-<h2>Why This Matters</h2>
-
-<p style="max-width:700px;margin:auto;text-align:center">
-
-Most marketing teams measure activity.  
-Effective marketing systems measure **buyer behavior**.
-
-When marketing signals are structured, classified, and connected to revenue, marketing becomes a strategic intelligence function instead of a content factory.
-
-</p>
-
-</section>
-
+    counters.forEach(counter => countObserver.observe(counter));
+  </script>
 </body>
 </html>
