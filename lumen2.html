@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Robb Barrett | Senior Marketo Leadership</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
   <meta
     name="description"
     content="Robb Barrett - enterprise Marketo leader focused on platform ownership, Salesforce integration, AI-enabled automation and revenue-focused marketing operations."
@@ -833,58 +834,204 @@
         align-items:flex-start;
       }
     }
+    .hero-inner{
+display:grid;
+grid-template-columns:1fr 460px;
+gap:40px;
+align-items:start;
+}
+
+.hero-right{
+display:flex;
+justify-content:center;
+}
+
+.fit-card{
+background:white;
+border-radius:24px;
+box-shadow:0 16px 40px rgba(0,0,0,0.08);
+padding:28px;
+max-width:420px;
+}
+
+.fit-header{
+font-weight:700;
+color:#1497a6;
+margin-bottom:20px;
+}
+
+.fit-grid{
+display:grid;
+gap:16px;
+}
+
+.fit-block span{
+font-size:12px;
+letter-spacing:.08em;
+color:#1497a6;
+font-weight:700;
+text-transform:uppercase;
+}
+
+.fit-block h4{
+margin:4px 0;
+font-size:16px;
+}
+
+.fit-block p{
+font-size:14px;
+color:#555;
+}
+
+.fit-block.full{
+margin-top:8px;
+padding-top:10px;
+border-top:1px solid #eee;
+}
+
+.hero-stats{
+margin-top:40px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:16px;
+}
+
+.stat{
+background:white;
+border-radius:18px;
+padding:22px;
+box-shadow:0 10px 30px rgba(0,0,0,0.05);
+}
+
+.stat strong{
+font-size:24px;
+display:block;
+margin-bottom:6px;
+}
+
+@media (max-width: 1000px){
+
+.hero-inner{
+grid-template-columns:1fr;
+}
+
+.hero-right{
+order:2;
+}
+
+.hero-stats{
+grid-template-columns:1fr;
+}
+
+}
   </style>
 </head>
 <body>
 
-  <section class="hero" id="top">
-    <div class="container hero-grid">
-      <div class="hero-copy reveal">
-        <div class="eyebrow">Senior Marketo Leadership</div>
+  <section class="hero">
 
-        <div class="nameplate">
-          <div class="monogram">RB</div>
-          <div class="identity">
-            <strong>Robb Barrett</strong>
-            <span>Marketing Operations Leader | Marketo | Salesforce | Campaign Analytics</span>
-          </div>
-        </div>
+<div class="hero-inner">
 
-        <h1>I lead enterprise Marketo ecosystems that scale operations and improve revenue visibility.</h1>
+<div class="hero-left">
 
-        <p class="sub">
-          Senior marketing operations leader with deep Marketo and Salesforce experience across platform ownership, team leadership, AI-enabled automation and enterprise execution.
-        </p>
+<div class="eyebrow">Senior Marketo Leadership</div>
 
-        <div class="proof-chips">
-          <div class="chip">15+ years in marketing operations</div>
-          <div class="chip">Enterprise Marketo architecture</div>
-          <div class="chip">Cross-functional leadership</div>
-        </div>
+<div class="profile">
+<div class="avatar">RB</div>
 
-        <div class="cta-row">
-          <a href="#fit" class="btn btn-primary">Why I fit this role</a>
-          <a href="#experience" class="btn btn-secondary">View experience</a>
-        </div>
+<div>
+<strong>Robb Barrett</strong><br>
+Marketing Operations Leader | Marketo | Salesforce | Campaign Analytics
+</div>
+</div>
 
-        <div class="hero-stats">
-          <div class="stat">
-            <div class="num" data-count="15">0</div>
-            <p>Years building campaign operations, reporting frameworks and scalable marketing systems</p>
-          </div>
-          <div class="stat">
-            <div class="num" data-count="4">0</div>
-            <p>Core areas aligned to this role: leadership, ownership, integration and AI operations</p>
-          </div>
-          <div class="stat">
-            <div class="num" data-count="100">0</div>
-            <p>Bias toward measurable business impact over vanity-metric confetti</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<h1>
+I lead enterprise Marketo ecosystems that scale operations and improve revenue visibility.
+</h1>
 
+<p class="sub">
+Senior marketing operations leader with deep Marketo and Salesforce experience, focused on platform ownership, team leadership, AI-enabled automation and cross-functional execution in complex enterprise environments.
+</p>
+
+<div class="chips">
+<div class="chip">15+ years in marketing operations</div>
+<div class="chip">Enterprise Marketo architecture</div>
+<div class="chip">Revenue-focused analytics</div>
+<div class="chip">AI-driven process design</div>
+<div class="chip">Cross-functional leadership</div>
+</div>
+
+<div class="buttons">
+<a class="btn-primary" href="#fit">Why I fit this role</a>
+<a class="btn-secondary" href="#experience">View experience</a>
+</div>
+
+</div>
+
+
+<div class="hero-right">
+
+<div class="fit-card">
+
+<div class="fit-header">
+Why I fit this role
+</div>
+
+<div class="fit-grid">
+
+<div class="fit-block">
+<span>Ownership</span>
+<h4>Platform Ownership</h4>
+<p>I design and govern Marketo environments with scalable programs, scoring, segmentation, hygiene and structure tied to business goals</p>
+</div>
+
+<div class="fit-block">
+<span>Leadership</span>
+<h4>Team Leadership</h4>
+<p>I lead with clear communication, ensuring collaboration and well defined job responsibilities</p>
+</div>
+
+<div class="fit-block">
+<span>Integration</span>
+<h4>Enterprise Integration</h4>
+<p>I connect Marketo with Salesforce and adjacent systems through clean data flows, sync logic, API-aware design and troubleshooting discipline</p>
+</div>
+
+<div class="fit-block full">
+<span>AI + Operations</span>
+<h4>AI + Operational Excellence</h4>
+<p>I turn AI from a buzzword into workflow: identifying use cases, piloting automation, measuring impact, documenting what scales and helping teams adopt to a new way of doing business</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="hero-stats">
+
+<div class="stat">
+<strong>15+</strong>
+<p>Years building campaign operations, marketing platforms and scalable tracking systems</p>
+</div>
+
+<div class="stat">
+<strong>4+</strong>
+<p>Core areas aligned to this role: leadership, ownership, integration and operations</p>
+</div>
+
+<div class="stat">
+<strong>100%</strong>
+<p>Bias toward measurable business impact over vanity metrics</p>
+</div>
+
+</div>
+
+</section>
   <section class="section reveal" id="fit">
     <div class="container">
       <div class="section-head">
