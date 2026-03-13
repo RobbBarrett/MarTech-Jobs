@@ -1,243 +1,1220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Robb Barrett | Senior Manager – Marketo | Lumen Technologies</title>
-
-<style>
-  :root {
-    --lumen-purple: #6d28d9;
-    --lumen-indigo: #4f46e5;
-    --lumen-blue: #2563eb;
-    --text-dark: #1f2937;
-    --text-muted: #6b7280;
-    --bg-light: #f9fafb;
-    --card-bg: #ffffff;
-    --radius: 12px;
-    --shadow: 0 4px 14px rgba(0,0,0,0.08);
-  }
-
-  body {
-    font-family: system-ui, sans-serif;
-    margin: 0;
-    background: var(--bg-light);
-    color: var(--text-dark);
-    line-height: 1.6;
-  }
-
-  header {
-    background: #ffffff;
-    border-bottom: 1px solid #e5e7eb;
-    padding: 16px 24px;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-  }
-
-  header .inner {
-    max-width: 960px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  nav a {
-    margin-left: 20px;
-    text-decoration: none;
-    color: var(--text-muted);
-    font-size: 14px;
-  }
-
-  nav a:hover {
-    color: var(--lumen-indigo);
-  }
-
-  main {
-    max-width: 960px;
-    margin: auto;
-    padding: 40px 24px;
-  }
-
-  .hero {
-    text-align: left;
-    margin-bottom: 48px;
-  }
-
-  .hero h1 {
-    font-size: 36px;
-    margin-bottom: 12px;
-    font-weight: 700;
-  }
-
-  .hero p {
-    max-width: 620px;
-    color: var(--text-muted);
-    font-size: 18px;
-  }
-
-  .btn-row {
-    margin-top: 20px;
-    display: flex;
-    gap: 12px;
-  }
-
-  .btn {
-    padding: 10px 18px;
-    border-radius: var(--radius);
-    text-decoration: none;
-    font-size: 15px;
-  }
-
-  .btn-primary {
-    background: var(--lumen-indigo);
-    color: white;
-  }
-
-  .btn-outline {
-    border: 1px solid var(--lumen-indigo);
-    color: var(--lumen-indigo);
-  }
-
-  section {
-    margin-bottom: 48px;
-  }
-
-  h2 {
-    font-size: 24px;
-    margin-bottom: 12px;
-  }
-
-  .card {
-    background: var(--card-bg);
-    padding: 20px;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    margin-bottom: 20px;
-  }
-
-  ul {
-    padding-left: 20px;
-  }
-
-  .two-col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-  }
-
-  @media (max-width: 700px) {
-    .two-col {
-      grid-template-columns: 1fr;
+  <meta charset="UTF-8" />
+  <title>Robb Barrett | Senior Manager – Marketo | Lumen Technologies</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-soft: #111827;
+      --bg-page: #020617;
+      --card: #0b1220;
+      --card-light: #111827;
+      --border-subtle: #1f2937;
+      --accent-1: #4f46e5;
+      --accent-2: #22c1ee;
+      --accent-3: #a855f7;
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --radius: 14px;
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.9);
+      --transition: 220ms ease-out;
     }
-  }
 
-  footer {
-    text-align: center;
-    padding: 24px;
-    color: var(--text-muted);
-    font-size: 14px;
-  }
-</style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 55%, #000 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    main {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+
+    /* Header */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(
+        to bottom,
+        rgba(15, 23, 42, 0.96),
+        rgba(15, 23, 42, 0.86),
+        transparent
+      );
+      border-bottom: 1px solid rgba(31, 41, 55, 0.8);
+    }
+
+    .nav-inner {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 12px 20px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      background: conic-gradient(from 210deg, #4f46e5, #22c1ee, #a855f7, #4f46e5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.9), 0 10px 26px rgba(15, 23, 42, 0.9);
+      font-size: 15px;
+      font-weight: 700;
+      color: #e5e7eb;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-text .name {
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      font-size: 15px;
+    }
+
+    .brand-text .role {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 16px;
+      list-style: none;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+    }
+
+    nav a {
+      position: relative;
+      padding-bottom: 3px;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(to right, var(--accent-1), var(--accent-2));
+      transition: width var(--transition);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta a {
+      font-size: 12px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: radial-gradient(circle at top left, #1f2937, #020617);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.95);
+      transition: var(--transition);
+    }
+
+    .nav-cta a span.icon {
+      font-size: 14px;
+    }
+
+    .nav-cta a:hover {
+      border-color: rgba(129, 140, 248, 0.95);
+      transform: translateY(-1px);
+    }
+
+    /* Hero */
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
+      gap: 28px;
+      margin-top: 30px;
+      align-items: center;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .hero-tagline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px 4px 4px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      box-shadow: 0 14px 35px rgba(15, 23, 42, 0.9);
+      width: fit-content;
+      font-size: 11px;
+    }
+
+    .hero-tagline-pill {
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: linear-gradient(to right, var(--accent-1), var(--accent-2));
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-weight: 600;
+    }
+
+    .hero-tagline-text {
+      color: var(--text-muted);
+    }
+
+    .hero-title {
+      font-size: clamp(30px, 4vw, 38px);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-title span.highlight {
+      background: linear-gradient(to right, var(--accent-1), var(--accent-2));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 15px;
+      color: var(--text-muted);
+      max-width: 560px;
+    }
+
+    .hero-subtitle strong {
+      color: #e5e7eb;
+      font-weight: 600;
+    }
+
+    .hero-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .hero-strip-item {
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 999px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      padding: 6px 10px;
+      font-size: 12px;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-strip-item span.icon {
+      font-size: 14px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 9px 18px;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: var(--transition);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+      color: #f9fafb;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 22px 55px rgba(15, 23, 42, 0.98);
+    }
+
+    .btn-ghost {
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--text-main);
+      border-color: rgba(75, 85, 99, 0.9);
+    }
+
+    .btn-ghost:hover {
+      border-color: rgba(129, 140, 248, 0.95);
+      transform: translateY(-1px);
+    }
+
+    .hero-right {
+      position: relative;
+    }
+
+    .hero-panel {
+      background: radial-gradient(circle at top left, #1f2937, #020617);
+      border-radius: 18px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      padding: 16px 16px 14px;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-panel::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background: conic-gradient(
+        from 220deg,
+        rgba(79, 70, 229, 0.12),
+        rgba(34, 193, 238, 0.18),
+        rgba(168, 85, 247, 0.12),
+        transparent,
+        transparent
+      );
+      opacity: 0.9;
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+
+    .hero-panel-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 10px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .hero-panel-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      align-items: baseline;
+    }
+
+    .hero-panel-title {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #e5e7eb;
+    }
+
+    .hero-panel-pill {
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .hero-panel-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .hero-panel-item {
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: 12px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      padding: 8px 9px;
+      display: grid;
+      gap: 2px;
+    }
+
+    .hero-panel-item strong {
+      font-size: 13px;
+      color: #e5e7eb;
+    }
+
+    .hero-panel-item span.label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #9ca3af;
+    }
+
+    .hero-panel-footer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .hero-panel-chip {
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      font-size: 11px;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-panel-chip span.dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent-2);
+      box-shadow: 0 0 0 4px rgba(34, 193, 238, 0.18);
+    }
+
+    /* Sections */
+
+    section {
+      margin-top: 40px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title span.marker {
+      width: 8px;
+      height: 22px;
+      border-radius: 999px;
+      background: linear-gradient(to bottom, var(--accent-1), var(--accent-2));
+      box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.9);
+    }
+
+    .section-kicker {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border-subtle);
+      padding: 16px 18px;
+      box-shadow: var(--shadow-soft);
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .card-light {
+      background: var(--card-light);
+      border-radius: var(--radius);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      padding: 16px 18px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .card h3 {
+      font-size: 15px;
+      margin-bottom: 4px;
+      color: #e5e7eb;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .pill {
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      font-size: 11px;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .pill strong {
+      color: #e5e7eb;
+      font-weight: 500;
+    }
+
+    .pill-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent-1);
+    }
+
+    ul.list {
+      list-style: none;
+      margin-top: 6px;
+      display: grid;
+      gap: 6px;
+    }
+
+    ul.list li {
+      display: flex;
+      gap: 8px;
+    }
+
+    ul.list li::before {
+      content: "▹";
+      color: var(--accent-2);
+      font-size: 11px;
+      margin-top: 2px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
+      gap: 20px;
+    }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
+      gap: 20px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .timeline-item {
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: 12px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      padding: 10px 11px;
+      font-size: 13px;
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .timeline-role {
+      font-weight: 500;
+      color: #e5e7eb;
+    }
+
+    .timeline-meta {
+      font-size: 11px;
+      color: #9ca3af;
+    }
+
+    .timeline-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+      font-size: 11px;
+    }
+
+    .timeline-tag {
+      padding: 3px 7px;
+      border-radius: 999px;
+      background: rgba(17, 24, 39, 0.9);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      color: var(--text-muted);
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+      font-size: 11px;
+    }
+
+    .badge {
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      color: var(--text-muted);
+    }
+
+    .badge.highlight {
+      background: rgba(79, 70, 229, 0.18);
+      border-color: rgba(129, 140, 248, 0.95);
+      color: #e5e7eb;
+    }
+
+    .check-list {
+      list-style: none;
+      display: grid;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .check-list li {
+      display: flex;
+      gap: 8px;
+      font-size: 13px;
+    }
+
+    .check-list li::before {
+      content: "✔";
+      color: #22c55e;
+      font-size: 12px;
+      margin-top: 1px;
+    }
+
+    .ai-steps {
+      display: grid;
+      gap: 8px;
+      margin-top: 6px;
+      font-size: 13px;
+    }
+
+    .ai-step {
+      display: flex;
+      gap: 8px;
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: 12px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      padding: 8px 9px;
+    }
+
+    .ai-step-index {
+      width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      background: rgba(79, 70, 229, 0.2);
+      border: 1px solid rgba(129, 140, 248, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: #e5e7eb;
+      flex-shrink: 0;
+    }
+
+    .ai-step strong {
+      color: #e5e7eb;
+    }
+
+    /* CTA */
+
+    .cta {
+      margin-top: 40px;
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: radial-gradient(circle at top left, var(--accent-1), #020617);
+      border: 1px solid rgba(129, 140, 248, 0.95);
+      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.98);
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
+      gap: 20px;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    .cta-title {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .cta-subtitle {
+      margin-top: 4px;
+      color: #e5e7eb;
+    }
+
+    .cta-actions {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .cta-actions a {
+      font-size: 13px;
+    }
+
+    .cta-meta {
+      display: grid;
+      gap: 6px;
+      font-size: 12px;
+      color: #e5e7eb;
+    }
+
+    .cta-meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: baseline;
+    }
+
+    .cta-meta-label {
+      font-weight: 500;
+    }
+
+    .cta-pill {
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.8);
+      font-size: 11px;
+    }
+
+    footer {
+      margin-top: 24px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      font-size: 11px;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    /* Scroll reveal */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 420ms ease-out, transform 420ms ease-out;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+
+    @media (max-width: 900px) {
+      .hero,
+      .two-col,
+      .experience-grid,
+      .cta {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-right {
+        order: -1;
+      }
+
+      nav ul {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      main {
+        padding: 24px 16px 40px;
+      }
+
+      .hero-title {
+        font-size: 28px;
+      }
+
+      .cta {
+        padding: 16px 16px 18px;
+      }
+
+      .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
 </head>
-
 <body>
-
-<header>
-  <div class="inner">
-    <strong>Robb Barrett</strong>
-    <nav>
-      <a href="#fit">Fit</a>
-      <a href="#experience">Experience</a>
-      <a href="#role">Role Mapping</a>
-      <a href="#ai">AI</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<main>
-
-<section class="hero">
-  <h1>Senior Manager – Marketo for Lumen Technologies</h1>
-  <p>
-    I build stable, scalable, enterprise-grade Marketo + Salesforce ecosystems that keep
-    marketing, sales, and RevOps aligned—and keep pipeline moving.
-  </p>
-
-  <div class="btn-row">
-    <a class="btn btn-primary" href="#fit">Why I Fit This Role</a>
-    <a class="btn btn-outline" href="#experience">View Experience</a>
-  </div>
-</section>
-
-<section id="fit">
-  <h2>Why I’m a Strong Fit for Lumen</h2>
-  <div class="card">
-    <p>
-      Lumen needs a Marketo leader who can own the platform, partner cross‑functionally,
-      and ensure operational excellence. That’s exactly where I thrive.
-    </p>
-    <ul>
-      <li>10+ years running Marketo as a mission‑critical system</li>
-      <li>Deep experience with Marketo–Salesforce sync, routing, and data design</li>
-      <li>Calm, structured leadership style</li>
-      <li>Hands‑on problem solver with strong documentation and governance discipline</li>
-    </ul>
-  </div>
-</section>
-
-<section id="experience">
-  <h2>Relevant Experience</h2>
-  <div class="two-col">
-    <div class="card">
-      <h3>Senior Marketing Operations / MarTech Lead</h3>
-      <p>Owned Marketo architecture, integrations, and operations.</p>
+  <header>
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="brand-mark">RB</div>
+        <div class="brand-text">
+          <span class="name">Robb Barrett</span>
+          <span class="role">Senior Manager – Marketo (Lumen)</span>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#fit">Fit</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#role-mapping">Role Mapping</a></li>
+          <li><a href="#ai">AI &amp; Automation</a></li>
+          <li><a href="#day-one">Day One Plan</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-cta">
+        <a href="#contact">
+          <span class="icon">✉️</span>
+          <span>Let’s talk</span>
+        </a>
+      </div>
     </div>
-    <div class="card">
-      <h3>Marketing Technology Consultant</h3>
-      <p>Untangled Marketo instances, improved governance, and built scalable frameworks.</p>
-    </div>
-  </div>
-</section>
+  </header>
 
-<section id="role">
-  <h2>Mapping to Lumen’s Senior Manager Role</h2>
-  <div class="card">
-    <ul>
-      <li>Platform ownership → I’ve done this for years</li>
-      <li>Cross‑functional leadership → Regular partner to sales & RevOps</li>
-      <li>Governance & QA → Built frameworks used org‑wide</li>
-      <li>AI‑assisted ops → Practical, safe, human‑in‑the‑loop</li>
-    </ul>
-  </div>
-</section>
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-left reveal">
+        <div class="hero-tagline">
+          <span class="hero-tagline-pill">Senior Manager – Marketo</span>
+          <span class="hero-tagline-text">Built for Lumen’s enterprise-scale marketing engine</span>
+        </div>
+        <h1 class="hero-title">
+          Powering Lumen’s next generation of
+          <span class="highlight">Marketo‑driven marketing operations.</span>
+        </h1>
+        <p class="hero-subtitle">
+          I lead <strong>enterprise‑scale Marketo + Salesforce ecosystems</strong> with clarity, stability, and momentum—integrating Adobe, AI, and automation to keep Lumen’s pipeline moving and teams aligned.
+        </p>
+        <div class="hero-strip">
+          <div class="hero-strip-item">
+            <span class="icon">⭐</span> 10+ years in marketing automation
+          </div>
+          <div class="hero-strip-item">
+            <span class="icon">🔗</span> Deep Marketo–Salesforce integration experience
+          </div>
+          <div class="hero-strip-item">
+            <span class="icon">🤝</span> Cross‑functional leadership with Sales, RevOps, IT
+          </div>
+          <div class="hero-strip-item">
+            <span class="icon">🤖</span> AI‑assisted, human‑in‑the‑loop operations
+          </div>
+        </div>
+        <div class="hero-actions">
+          <a href="#fit" class="btn btn-primary">Why I Fit This Role</a>
+          <a href="#experience" class="btn btn-ghost">View Experience</a>
+        </div>
+      </div>
+      <div class="hero-right reveal">
+        <div class="hero-panel">
+          <div class="hero-panel-inner">
+            <div class="hero-panel-header">
+              <div class="hero-panel-title">Lumen role snapshot</div>
+              <div class="hero-panel-pill">Senior Manager – Marketo</div>
+            </div>
+            <div class="hero-panel-grid">
+              <div class="hero-panel-item">
+                <span class="label">Platform ownership</span>
+                <strong>Marketo Engage</strong>
+                <span>Architecture, governance, execution</span>
+              </div>
+              <div class="hero-panel-item">
+                <span class="label">Ecosystem</span>
+                <strong>Adobe + SFDC</strong>
+                <span>AEP, AJO, AEM, Salesforce</span>
+              </div>
+              <div class="hero-panel-item">
+                <span class="label">Leadership</span>
+                <strong>Team &amp; execution</strong>
+                <span>Specialists, QA, SLAs, playbooks</span>
+              </div>
+              <div class="hero-panel-item">
+                <span class="label">Innovation</span>
+                <strong>AI &amp; automation</strong>
+                <span>Predictive, orchestration, personalization</span>
+              </div>
+            </div>
+            <div class="hero-panel-footer">
+              <div class="hero-panel-chip">
+                <span class="dot"></span> Enterprise‑grade stability
+              </div>
+              <div class="hero-panel-chip">
+                <span class="dot"></span> Data‑driven decisioning
+              </div>
+              <div class="hero-panel-chip">
+                <span class="dot"></span> Human‑in‑the‑loop AI
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section id="ai">
-  <h2>AI, Operations & Responsible Scale</h2>
-  <div class="card">
-    <p>
-      I use AI to accelerate operations—not replace expertise. My approach keeps humans
-      in control while improving speed, consistency, and documentation.
-    </p>
-  </div>
-</section>
+    <!-- Fit -->
+    <section id="fit">
+      <div class="section-header">
+        <div class="section-title">
+          <span class="marker"></span>
+          <span>Why I’m a strong fit for Lumen</span>
+        </div>
+        <div class="section-kicker">Aligned to the Senior Manager – Marketo role</div>
+      </div>
+      <div class="two-col">
+        <div class="card reveal">
+          <p>
+            Lumen needs a Marketo leader who can <strong>own the platform end‑to‑end</strong>, integrate it across Adobe and Salesforce, and guide a team toward AI‑enabled, automated marketing. That’s the work I’ve been doing for years: turning complex ecosystems into <strong>stable, measurable, and scalable engines</strong> that marketing, sales, and RevOps can trust.
+          </p>
+          <ul class="list">
+            <li>Proven track record running Marketo as a <strong>mission‑critical system</strong>, not just a campaign tool.</li>
+            <li>Deep experience with <strong>Marketo–Salesforce sync, routing, and data design</strong> in complex orgs.</li>
+            <li>Calm, structured leadership style that stabilizes chaos and builds confidence.</li>
+            <li>Pragmatic about AI: I use it to <strong>accelerate operations, not replace judgment</strong>.</li>
+          </ul>
+          <div class="pill-row">
+            <div class="pill">
+              <span class="pill-dot"></span>
+              <span><strong>Style:</strong> Calm, structured, collaborative</span>
+            </div>
+            <div class="pill">
+              <span class="pill-dot"></span>
+              <span><strong>Mode:</strong> Hands‑on leader, not just a slide‑maker</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-light reveal">
+          <h3>What Lumen gets on day one</h3>
+          <ul class="check-list">
+            <li>A Marketo owner who can immediately assess architecture, hygiene, and risk.</li>
+            <li>A partner for Sales Ops, RevOps, Digital, and IT who speaks their language.</li>
+            <li>A governance mindset: documentation, QA, SLAs, and clear operating models.</li>
+            <li>An AI‑literate leader who can pilot intelligent workflows responsibly.</li>
+          </ul>
+          <div class="badge-row">
+            <span class="badge highlight">Platform ownership</span>
+            <span class="badge">Cross‑functional leadership</span>
+            <span class="badge">Governance &amp; QA</span>
+            <span class="badge">AI‑assisted operations</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section id="contact">
-  <h2>Let’s Talk</h2>
-  <div class="card">
-    <p>I’d love to discuss Lumen’s Marketo roadmap and how I can support it.</p>
-    <p><strong>Email:</strong> you@example.com</p>
-    <p><strong>LinkedIn:</strong> linkedin.com/in/yourprofile</p>
-  </div>
-</section>
+    <!-- Experience -->
+    <section id="experience">
+      <div class="section-header">
+        <div class="section-title">
+          <span class="marker"></span>
+          <span>Relevant experience</span>
+        </div>
+        <div class="section-kicker">Enterprise Marketo &amp; MarTech leadership</div>
+      </div>
+      <div class="experience-grid">
+        <div class="card reveal">
+          <p>
+            My career sits at the intersection of <strong>marketing operations, technology, and revenue</strong>. I’ve owned Marketo and adjacent systems, made them work for the business, and led teams and stakeholders through change.
+          </p>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-header">
+                <div>
+                  <div class="timeline-role">Senior Marketing Operations / MarTech Lead</div>
+                  <div class="timeline-meta">Enterprise &amp; B2B environments</div>
+                </div>
+                <div class="timeline-meta">Multi‑year</div>
+              </div>
+              <div>
+                Owned Marketo architecture, integrations, and operations. Partnered with sales and RevOps to align lifecycle, routing, and reporting, treating Marketo as a core revenue system.
+              </div>
+              <div class="timeline-tags">
+                <span class="timeline-tag">Marketo admin &amp; architect</span>
+                <span class="timeline-tag">Salesforce integration</span>
+                <span class="timeline-tag">Lifecycle &amp; scoring</span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-header">
+                <div>
+                  <div class="timeline-role">Marketing Technology Consultant</div>
+                  <div class="timeline-meta">Multiple industries &amp; stacks</div>
+                </div>
+                <div class="timeline-meta">Ongoing</div>
+              </div>
+              <div>
+                Untangled Marketo instances, rationalized fields and data flows, and implemented sustainable governance and QA practices for organizations at different stages of maturity.
+              </div>
+              <div class="timeline-tags">
+                <span class="timeline-tag">Instance clean‑up</span>
+                <span class="timeline-tag">Governance frameworks</span>
+                <span class="timeline-tag">Documentation &amp; enablement</span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-header">
+                <div>
+                  <div class="timeline-role">AI‑assisted Operations &amp; Workflow Design</div>
+                  <div class="timeline-meta">MarTech &amp; RevOps</div>
+                </div>
+                <div class="timeline-meta">Recent focus</div>
+              </div>
+              <div>
+                Designed AI‑assisted workflows for QA, documentation, and analysis—always with human review and clear guardrails on what AI can and cannot decide.
+              </div>
+              <div class="timeline-tags">
+                <span class="timeline-tag">AI‑assisted QA</span>
+                <span class="timeline-tag">Prompt &amp; workflow design</span>
+                <span class="timeline-tag">Responsible AI</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-light reveal">
+          <h3>Impact snapshots</h3>
+          <ul class="list">
+            <li>
+              <strong>Stabilized Marketo–Salesforce sync &amp; routing:</strong> Restructured field strategy, sync rules, and routing logic; introduced QA and monitoring, reducing sync‑related issues and noise.
+            </li>
+            <li>
+              <strong>Lifecycle &amp; scoring that sales trusts:</strong> Rebuilt lifecycle and scoring with sales input and transparent reporting, improving MQL acceptance and shared definitions.
+            </li>
+            <li>
+              <strong>AI‑assisted operations without losing control:</strong> Implemented AI‑assisted QA and documentation flows that sped up work while preserving data trust and human oversight.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-</main>
+    <!-- Role mapping -->
+    <section id="role-mapping">
+      <div class="section-header">
+        <div class="section-title">
+          <span class="marker"></span>
+          <span>Mapping to Lumen’s Senior Manager – Marketo role</span>
+        </div>
+        <div class="section-kicker">How my experience lines up with your needs</div>
+      </div>
+      <div class="two-col">
+        <div class="card reveal">
+          <h3>Core responsibilities → My track record</h3>
+          <ul class="check-list">
+            <li><strong>Team leadership &amp; execution:</strong> Led Marketo and MarTech teams, served as escalation point for complex builds and issues.</li>
+            <li><strong>Platform ownership:</strong> Owned Marketo architecture, governance, and execution across multiple organizations.</li>
+            <li><strong>Integration &amp; ecosystem:</strong> Deep Marketo–Salesforce experience; partnered with IT, RevOps, and digital teams on data flows and automation.</li>
+            <li><strong>AI &amp; automation innovation:</strong> Designed AI‑assisted workflows that accelerate operations while keeping humans in control.</li>
+            <li><strong>Operational excellence:</strong> Built documentation, training, governance, and change‑management practices that stick.</li>
+          </ul>
+        </div>
+        <div class="card-light reveal">
+          <h3>Requirements &amp; preferred qualifications</h3>
+          <ul class="check-list">
+            <li>7+ years in marketing automation → <strong>10+ years hands‑on Marketo &amp; MarTech.</strong></li>
+            <li>3+ years leadership → <strong>Led teams and cross‑functional initiatives.</strong></li>
+            <li>4+ years Marketo Engage → <strong>Deep admin and architecture experience.</strong></li>
+            <li>Salesforce expertise → <strong>Field strategy, sync, routing, lifecycle.</strong></li>
+            <li>AI‑driven marketing → <strong>AI‑assisted ops and workflows.</strong></li>
+            <li>Adobe &amp; ecosystem → <strong>Experience with Adobe tools, CDPs, and enterprise integrations.</strong></li>
+          </ul>
+          <div class="badge-row">
+            <span class="badge highlight">You wrote the role I’ve been doing</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<footer>
-  Tailored for Lumen Technologies – Senior Manager, Marketo
-</footer>
+    <!-- AI & Automation -->
+    <section id="ai">
+      <div class="section-header">
+        <div class="section-title">
+          <span class="marker"></span>
+          <span>AI, automation, and responsible scale</span>
+        </div>
+        <div class="section-kicker">Practical, not hype‑driven</div>
+      </div>
+      <div class="two-col">
+        <div class="card reveal">
+          <p>
+            I treat AI as a <strong>force multiplier for good operations</strong>, not a replacement for expertise. In a role like this, that means using AI to make Marketo more reliable, more documented, and easier to work with—while keeping humans firmly in control.
+          </p>
+          <ul class="list">
+            <li>Use AI to draft documentation, QA checklists, and playbooks, then refine with human judgment.</li>
+            <li>Apply AI to pattern‑spotting in logs, sync issues, and performance data—flagging anomalies for review.</li>
+            <li>Support marketers with guided prompts and templates that keep campaigns on‑brand and on‑process.</li>
+            <li>Keep a clear line: AI can suggest, summarize, and surface patterns; humans decide and approve.</li>
+          </ul>
+          <div class="pill-row">
+            <div class="pill">
+              <span class="pill-dot"></span>
+              <span><strong>Principle:</strong> AI augments, humans own decisions.</span>
+            </div>
+            <div class="pill">
+              <span class="pill-dot"></span>
+              <span><strong>Outcome:</strong> Faster ops, stronger governance.</span>
+            </div>
+          </div>
+        </div>
+        <div class="card-light reveal">
+          <h3>Example AI‑assisted workflow for Marketo at Lumen</h3>
+          <div class="ai-steps">
+            <div class="ai-step">
+              <div class="ai-step-index">1</div>
+              <div>
+                <strong>Campaign intake &amp; design</strong><br />
+                Marketer submits a brief; AI helps structure requirements and map them to existing Marketo patterns and templates.
+              </div>
+            </div>
+            <div class="ai-step">
+              <div class="ai-step-index">2</div>
+              <div>
+                <strong>Build &amp; QA checklist</strong><br />
+                AI generates a tailored QA checklist based on campaign type, channels, and data touchpoints. Human reviews and executes.
+              </div>
+            </div>
+            <div class="ai-step">
+              <div class="ai-step-index">3</div>
+              <div>
+                <strong>Post‑launch monitoring</strong><br />
+                AI surfaces anomalies in performance or sync behavior for human review, helping catch issues earlier.
+              </div>
+            </div>
+            <div class="ai-step">
+              <div class="ai-step-index">4</div>
+              <div>
+                <strong>Documentation &amp; learning</strong><br />
+                AI drafts campaign summaries and “what we learned” notes, which are edited and stored in a shared knowledge base.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- Day One Plan -->
+    <section id="day-one">
+      <div class="section-header">
+        <div class="section-title">
+          <span class="marker"></span>
+          <span>First 60 days: how I’d approach the role</span>
+        </div>
+        <div class="section-kicker">A practical, Lumen‑specific plan</div>
+      </div>
+      <div class="two-col">
+        <div class="card reveal">
+          <h3>Days 1–30: Understand, stabilize, align</h3>
+          <ul class="list">
+            <li>Deep‑dive into Lumen’s current Marketo, Salesforce, and Adobe ecosystem: architecture, data model, and pain points.</li>
+            <li>Clarify ownership, SLAs, and expectations across Marketing Ops, Growth, Digital, Sales Ops, IT, and AI enablement teams.</li>
+            <li>Identify and address quick wins that improve stability and trust (sync issues, routing clarity, reporting gaps).</li>
+            <li>Assess existing governance: naming, foldering, templates, QA, and documentation.</li>
+          </ul>
+        </div>
+        <div class="card-light reveal">
+          <h3>Days 31–60: Optimize, document, pilot</h3>
+          <ul class="list">
+            <li>Refine lifecycle, scoring, and segmentation to align with business objectives and sales expectations.</li>
+            <li>Formalize a Marketo governance framework and operational playbook for the team.</li>
+            <li>Partner with AI enablement teams to identify 1–2 high‑value AI‑assisted workflows to pilot.</li>
+            <li>Establish a simple, shared dashboard for key funnel and platform health metrics.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact / CTA -->
+    <section id="contact" class="reveal">
+      <div class="cta">
+        <div>
+          <div class="cta-title">Let’s talk about Lumen’s Marketo roadmap.</div>
+          <div class="cta-subtitle">
+            I’d love to walk through how I’d approach your current architecture, pain points, and growth plans—and share concrete ideas tailored to Lumen’s environment.
+          </div>
+          <div class="cta-actions">
+            <a href="mailto:youremail@example.com" class="btn btn-primary">Email Robb</a>
+            <a href="https://www.linkedin.com/in/your-profile" target="_blank" class="btn btn-ghost">Connect on LinkedIn</a>
+          </div>
+        </div>
+        <div class="cta-meta">
+          <div class="cta-meta-row">
+            <span class="cta-meta-label">Location:</span>
+            <span>Tampa, FL (remote‑friendly)</span>
+          </div>
+          <div class="cta-meta-row">
+            <span class="cta-meta-label">Focus:</span>
+            <span>Marketo platform ownership, Adobe &amp; Salesforce integration, AI‑assisted operations.</span>
+          </div>
+          <div class="cta-meta-row">
+            <span class="cta-meta-label">Working style:</span>
+            <span class="cta-pill">Calm under pressure</span>
+            <span class="cta-pill">Hands‑on leader</span>
+            <span class="cta-pill">Transparent communicator</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span>Tailored for Lumen Technologies – Senior Manager, Marketo.</span>
+      <span>Built as a live snapshot of how I think about MarTech, AI, and operations.</span>
+    </footer>
+  </main>
+
+  <script>
+    const revealEls = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    revealEls.forEach((el) => observer.observe(el));
+  </script>
 </body>
 </html>
