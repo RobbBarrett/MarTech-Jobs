@@ -781,6 +781,174 @@
         gap:8px;
       }
     }
+
+.footer{
+      margin-top:40px;
+      background:linear-gradient(135deg, #11233e 0%, #183457 55%, #104953 100%);
+      color:#fff;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .footer::before{
+      content:"";
+      position:absolute;
+      inset:auto -10% -120px auto;
+      width:320px;
+      height:320px;
+      background:radial-gradient(circle, rgba(20,151,166,.18) 0%, rgba(20,151,166,0) 70%);
+      pointer-events:none;
+    }
+
+    .footer-inner{
+      padding:40px 0 18px;
+      position:relative;
+      z-index:1;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:24px;
+      align-items:start;
+      margin-bottom:28px;
+    }
+
+    .footer-brand{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      max-width:700px;
+    }
+
+    .footer-brand-top{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .footer-monogram{
+      width:48px;
+      height:48px;
+      border-radius:16px;
+      display:grid;
+      place-items:center;
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.14);
+      font-weight:900;
+      letter-spacing:.04em;
+    }
+
+    .footer-title{
+      font-size:1.1rem;
+      font-weight:800;
+      letter-spacing:-.02em;
+    }
+
+    .footer-sub{
+      color:rgba(255,255,255,.74);
+      max-width:640px;
+    }
+
+    .footer-contact{
+      display:grid;
+      gap:10px;
+      justify-items:start;
+    }
+
+    .footer-contact a,
+    .footer-contact div{
+      color:rgba(255,255,255,.92);
+      font-weight:600;
+    }
+
+    .footer-bottom{
+      border-top:1px solid rgba(255,255,255,.12);
+      padding-top:16px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:18px;
+      flex-wrap:wrap;
+      color:rgba(255,255,255,.70);
+      font-size:.92rem;
+    }
+
+    .reveal{
+      opacity:0;
+      transform:translateY(24px);
+      transition:opacity .72s ease, transform .72s ease;
+    }
+
+    .reveal.is-visible{
+      opacity:1;
+      transform:none;
+    }
+     @media (max-width: 1200px){
+      .hero-grid{
+        grid-template-columns:1fr;
+      }
+
+      .stats-rail{
+        grid-template-columns:repeat(3,1fr);
+      }
+    }
+
+    @media (max-width: 1080px){
+      .grid-4{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .impact-grid,
+      .proof-grid,
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+
+      .fit-grid{
+        grid-template-columns:1fr;
+      }
+
+      .fit-grid::before,
+      .fit-grid::after{
+        display:none;
+      }
+
+      .fit-block.full{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media (max-width: 760px){
+      .container{
+        width:min(var(--max), calc(100% - 24px));
+      }
+
+      h1{
+        font-size:clamp(2rem, 7vw, 3.1rem);
+        max-width:11ch;
+      }
+
+      .stats-rail,
+      .grid-4,
+      .proof-grid{
+        grid-template-columns:1fr;
+      }
+
+      .role-row{
+        grid-template-columns:1fr;
+        gap:8px;
+      }
+
+      .footer-inner{
+        padding:32px 0 18px;
+      }
+
+      .footer-bottom{
+        align-items:flex-start;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1069,6 +1237,32 @@
 
     <a href="#top" class="btn btn-primary">Back to top</a>
   </div>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-brand-top">
+            <div class="footer-monogram">RB</div>
+            <div class="footer-title">Robb Barrett</div>
+          </div>
+          <div class="footer-sub">
+            Marketing Operations Leader focused on Marketo, Salesforce, campaign analytics, platform governance and AI-enabled operational excellence.
+          </div>
+        </div>
+
+        <div class="footer-contact">
+          <a href="mailto:robb.barrett@gmail.com">robb.barrett@gmail.com</a>
+          <a href="tel:18473025474">(847) 302-5474</a>
+          <div>Robb Barrett</div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>Copyright © 2026 Robb Barrett. All rights reserved.</div>
+        <div>Enterprise Marketo Leadership Campaign</div>
+      </div>
+    </div>
+  </footer>
 
   <script>
     const revealEls = document.querySelectorAll('.reveal');
